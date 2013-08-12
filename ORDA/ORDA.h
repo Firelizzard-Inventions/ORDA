@@ -6,8 +6,16 @@
 //  Copyright (c) 2013 Firelizzard Inventions. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <TypeExtensions/NSObject_Singleton.h>
 
-@interface ORDA : NSObject
+@protocol ORDADriver, ORDAGovernor;
+
+@interface ORDA : NSObject_Singleton
+
+@property (readonly) NSArray * registeredDrivers;
+
+- (void)registerDriver:(id<ORDADriver>)driver;
+
+- (id<ORDAGovernor>)governorForURL:(NSURL *)URL;
 
 @end
