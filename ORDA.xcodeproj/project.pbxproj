@@ -53,6 +53,9 @@
 		42B00BFE17C66DC3000B13E7 /* TypeExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F06AD517B86654004F2F06 /* TypeExtensions.framework */; };
 		42B00C1B17C6BA66000B13E7 /* ORDASQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B00BD217C66C72000B13E7 /* ORDASQLite.framework */; };
 		42B00C1C17C6BA6E000B13E7 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B00BFC17C66D38000B13E7 /* libsqlite3.0.dylib */; };
+		42B00C3317C6C65D000B13E7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 42B00C2D17C6C54D000B13E7 /* README.md */; };
+		42B00C3517C6C66A000B13E7 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 42B00C3417C6C669000B13E7 /* LICENSE */; };
+		42B00C3617C6C66A000B13E7 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 42B00C3417C6C669000B13E7 /* LICENSE */; };
 		42F06AF217B8786A004F2F06 /* ORDADriver.h in Headers */ = {isa = PBXBuildFile; fileRef = 42F06AC817B8627D004F2F06 /* ORDADriver.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		42F06AFB17B87872004F2F06 /* ORDA.h in Headers */ = {isa = PBXBuildFile; fileRef = 42909B7417B31A4700DBD505 /* ORDA.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -139,6 +142,8 @@
 		42B00BEE17C66CD9000B13E7 /* ORDASQLiteStatement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORDASQLiteStatement.h; sourceTree = "<group>"; };
 		42B00BEF17C66CD9000B13E7 /* ORDASQLiteStatement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORDASQLiteStatement.m; sourceTree = "<group>"; };
 		42B00BFC17C66D38000B13E7 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		42B00C2D17C6C54D000B13E7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		42B00C3417C6C669000B13E7 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		42F06AC817B8627D004F2F06 /* ORDADriver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ORDADriver.h; path = Specification/ORDADriver.h; sourceTree = "<group>"; };
 		42F06AD517B86654004F2F06 /* TypeExtensions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TypeExtensions.framework; path = ../CORM/DerivedData/CORM/Build/Products/Debug/TypeExtensions.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -182,6 +187,8 @@
 		42909B5A17B31A4700DBD505 = {
 			isa = PBXGroup;
 			children = (
+				42B00C3417C6C669000B13E7 /* LICENSE */,
+				42B00C2D17C6C54D000B13E7 /* README.md */,
 				42909B6D17B31A4700DBD505 /* ORDA */,
 				42B00BD417C66C72000B13E7 /* ORDASQLite */,
 				42909B8317B31A4700DBD505 /* ORDATests */,
@@ -463,8 +470,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42B00C3317C6C65D000B13E7 /* README.md in Resources */,
 				42909B7217B31A4700DBD505 /* InfoPlist.strings in Resources */,
 				42B00AF617C3402F000B13E7 /* Chinook_Sqlite.sqlite in Resources */,
+				42B00C3517C6C66A000B13E7 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +490,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42B00BD917C66C72000B13E7 /* InfoPlist.strings in Resources */,
+				42B00C3617C6C66A000B13E7 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
