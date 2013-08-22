@@ -13,39 +13,52 @@
 #import "ORDAGovernor.h"
 #import "ORDAStatement.h"
 
-@implementation ORDATests
+@implementation ORDATests {
+	id<ORDAGovernor> governor;
+}
 
 - (void)setUp
 {
     [super setUp];
     
 	[ORDASQLite register];
+	
+	NSString * path = [[NSBundle bundleForClass:[ORDA class]] pathForResource:@"Chinook_Sqlite" ofType:@"sqlite"];
+	NSString * str = [NSString stringWithFormat:@"%@:%@", [ORDASQLite scheme], [NSURL fileURLWithPath:path]];
+	NSURL * URL = [NSURL URLWithString:str];
+	
+	governor = [[ORDA sharedInstance] governorForURL:URL].retain;
+	if (governor.isError)
+		STFail(@"Governor error");
 }
 
 - (void)tearDown
 {
+	[governor release];
+	
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testSelect
 {
-//	NSString * URL = [[ORDASQLite scheme] stringByAppendingString:[NSURL fileURLWithPath:@"Chinook_Sqlite.sqlite"]];
-//	id<ORDAGovernor> governor = [[ORDA sharedInstance] governorForURL:[NSURL URLWithString:URL]];
-//	
-//	if (!((id<ORDAResult>)governor).isSuccess)
-//		STFail(@"Governor error");
-//	
-//	id<ORDAStatement> statement = [governor createStatement:@"SELECT * FROM sqlite_master WHERE type='table'"];
-//	
-//	if (!((id<ORDAResult>)statement).isSuccess)
-//		STFail(@"Statement error");
-//	
-//	id<ORDAStatementResult> result = statement.result;
-//	
-//	if (!((id<ORDAResult>)result).isSuccess)
-//		STFail(@"Result error");
-//	
-//	NSLog(@"Rows: %d, columns: %d, row 0: %@", [result rows], [result columns], result[0]);
+	id<ORDAStatement> statement = [governor createStatement:@"SELECT * FROM Track LIMIT 10"];
+	if (statement.isError)
+		STFail(@"Statement error");
+	
+	id<ORDAStatementResult> result = statement.result;
+	if (result.isError)
+		STFail(@"Result error");
+	
+	NSLog(@"Changes: %d, Last ID: %lld, Rows: %d, columns: %d", result.changed, result.lastID, result.rows, result.columns);
+	for (int i = 0; i < result.rows; i++)
+		NSLog(@"%@", result[i]);
+}
+
+- (void)testMetadata
+{
+	NSLog(@"%@", [governor columnNamesForTableName:@"Track"]);
+	NSLog(@"%@", [governor primaryKeyNamesForTableName:@"Track"]);
+	NSLog(@"%@", [governor foreignKeyTableNamesForTableName:@"Track"]);
 }
 
 @end
