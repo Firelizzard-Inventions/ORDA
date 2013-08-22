@@ -8,25 +8,44 @@
 
 #import "ORDATests.h"
 
+#import "ORDA.h"
+#import "ORDASQLite.h"
+#import "ORDAGovernor.h"
+#import "ORDAStatement.h"
+
 @implementation ORDATests
 
 - (void)setUp
 {
     [super setUp];
     
-    // Set-up code here.
+	[ORDASQLite register];
 }
 
 - (void)tearDown
 {
-    // Tear-down code here.
-    
     [super tearDown];
 }
 
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in ORDATests");
+//	NSString * URL = [[ORDASQLite scheme] stringByAppendingString:[NSURL fileURLWithPath:@"Chinook_Sqlite.sqlite"]];
+//	id<ORDAGovernor> governor = [[ORDA sharedInstance] governorForURL:[NSURL URLWithString:URL]];
+//	
+//	if (!((id<ORDAResult>)governor).isSuccess)
+//		STFail(@"Governor error");
+//	
+//	id<ORDAStatement> statement = [governor createStatement:@"SELECT * FROM sqlite_master WHERE type='table'"];
+//	
+//	if (!((id<ORDAResult>)statement).isSuccess)
+//		STFail(@"Statement error");
+//	
+//	id<ORDAStatementResult> result = statement.result;
+//	
+//	if (!((id<ORDAResult>)result).isSuccess)
+//		STFail(@"Result error");
+//	
+//	NSLog(@"Rows: %d, columns: %d, row 0: %@", [result rows], [result columns], result[0]);
 }
 
 @end

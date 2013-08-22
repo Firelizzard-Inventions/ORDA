@@ -9,10 +9,25 @@
 #import "ORDA.h"
 
 #import "ORDADriver.h"
-#import "ORDAErrorResult.h"
+//#import "ORDAErrorResult.h"
 
 @implementation ORDA {
 	NSMutableDictionary * _registeredDrivers;
+}
+
++ (BOOL)code:(ORDAResultCode)code matchesCode:(ORDACode)test withMask:(ORDAResultCodeMask)mask
+{
+	return (code & mask) == test;
+}
+
++ (BOOL)code:(ORDAResultCode)code matchesClass:(ORDAResultCodeClass)class
+{
+	return [self code:code matchesCode:class withMask:kORDAResultCodeClassMask];
+}
+
++ (BOOL)code:(ORDAResultCode)code matchesSubclass:(ORDAResultCodeSubclass)subclass
+{
+	return [self code:code matchesCode:subclass withMask:kORDAResultCodeSubclassMask];
 }
 
 - (id)init {
@@ -49,18 +64,18 @@
 
 - (id<ORDAGovernor>)governorForURL:(NSURL *)URL
 {
-	if (!URL)
-		return (id<ORDAGovernor>)[[ORDAErrorResult alloc] initWithCode:kORDANilURLErrorResultCode];
+//	if (!URL)
+//		return (id<ORDAGovernor>)[ORDAErrorResult errorWithCode:kORDANilURLErrorResultCode andProtocol:@protocol(ORDAGovernor)];
 	
-	id<ORDADriver> driver = _registeredDrivers[[URL scheme]];
+	id<ORDADriver> driver = _registeredDrivers[URL.scheme];
 	
-	if (!driver)
-		return (id<ORDAGovernor>)[[ORDAErrorResult alloc] initWithCode:kORDAMissingDriverErrorResultCode];
+//	if (!driver)
+//		return (id<ORDAGovernor>)[ORDAErrorResult errorWithCode:kORDAMissingDriverErrorResultCode andProtocol:@protocol(ORDAGovernor)];
 	
-	NSURL * subURL = [NSURL URLWithString:[URL resourceSpecifier]];
+	NSURL * subURL = [NSURL URLWithString:URL.resourceSpecifier];
 	
-	if (!subURL)
-		return (id<ORDAGovernor>)[[ORDAErrorResult alloc] initWithCode:kORDABadURLErrorResultCode];
+//	if (!subURL)
+//		return (id<ORDAGovernor>)[ORDAErrorResult errorWithCode:kORDABadURLErrorResultCode andProtocol:@protocol(ORDAGovernor)];
 	
 	return [driver governorForURL:subURL];
 }
