@@ -56,6 +56,8 @@
 		42B00BFA17C66D1C000B13E7 /* ORDA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42909B6417B31A4700DBD505 /* ORDA.framework */; };
 		42B00BFD17C66D39000B13E7 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B00BFC17C66D38000B13E7 /* libsqlite3.0.dylib */; };
 		42B00BFE17C66DC3000B13E7 /* TypeExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F06AD517B86654004F2F06 /* TypeExtensions.framework */; };
+		42B00C1517C6956D000B13E7 /* ORDASQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B00BD217C66C72000B13E7 /* ORDASQLite.framework */; };
+		42B00C1617C69573000B13E7 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B00BFC17C66D38000B13E7 /* libsqlite3.0.dylib */; };
 		42F06AF217B8786A004F2F06 /* ORDADriver.h in Headers */ = {isa = PBXBuildFile; fileRef = 42F06AC817B8627D004F2F06 /* ORDADriver.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		42F06AFB17B87872004F2F06 /* ORDA.h in Headers */ = {isa = PBXBuildFile; fileRef = 42909B7417B31A4700DBD505 /* ORDA.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -177,6 +179,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42B00C1617C69573000B13E7 /* libsqlite3.0.dylib in Frameworks */,
+				42B00C1517C6956D000B13E7 /* ORDASQLite.framework in Frameworks */,
 				42B00AF017C33833000B13E7 /* ORDA.framework in Frameworks */,
 				42B00AE517C337D9000B13E7 /* Foundation.framework in Frameworks */,
 				42B00AF117C3383A000B13E7 /* TypeExtensions.framework in Frameworks */,

@@ -27,16 +27,14 @@
 	
 	if (![governor isKindOfClass:[ORDASQLiteGovernor class]])
 		return (ORDASQLiteStatement *)[ORDASQLiteErrorResult errorWithCode:kORDAInternalAPIMismatchErrorResultCode].retain;
-	ORDASQLiteGovernor * sqlite_gov = (ORDASQLiteGovernor *)governor;
 	
 	_result = nil;
+	_connection = ((ORDASQLiteGovernor *)governor).connection;
 	
 	char * rest;
-	int status = sqlite3_prepare_v2(sqlite_gov.connection, [SQL cStringUsingEncoding:NSASCIIStringEncoding], (int)SQL.length, &_statement, (const char **) &rest);
+	int status = sqlite3_prepare_v2(self.connection, [SQL cStringUsingEncoding:NSASCIIStringEncoding], (int)SQL.length, &_statement, (const char **) &rest);
 	if (status != SQLITE_OK)
 		return (ORDASQLiteStatement *)[ORDASQLiteErrorResult errorWithCode:(ORDACode)kORDABadStatementSQLErrorResultCode andSQLiteErrorCode:status].retain;
-	
-	[self reset];
 	
 	if (!rest[0]) {
 		_nextStatement = nil;
@@ -71,33 +69,41 @@ exit:
 		
 		int rows = -1;
 		int columns = sqlite3_column_count(self.statement);
+		int changed = sqlite3_changes(self.connection);
+		long long lastID = sqlite3_last_insert_rowid(self.connection);
+		
 		NSMutableArray * colarr = [NSMutableArray arrayWithCapacity:columns];
-		for (int i = 0; i < columns; i++)
-			colarr[i] = [NSString stringWithCString:sqlite3_column_name(self.statement, i) encoding:NSUTF8StringEncoding];
-		
 		NSMutableDictionary * arrayDict = [NSMutableDictionary dictionaryWithCapacity:columns];
-		for (id key in colarr)
-			arrayDict[key] = [NSMutableArray array];
-		
 		NSMutableArray * dictArray = [NSMutableArray array];
-		id sharedKeySet = [NSDictionary sharedKeySetForKeys:colarr];
 		
-		do {
-			NSMutableDictionary * row = [NSMutableDictionary dictionaryWithSharedKeySet:sharedKeySet];
-			[dictArray addObject:row];
-			for (int i = 0; i < columns; i++) {
-				id key = colarr[i];
-				id obj = [self columnObjectForIndex:i];
-				
-				row[key] = obj;
-				[arrayDict[key] addObject:obj];
-			}
-		} while ((status = sqlite3_step(self.statement)) == SQLITE_ROW);
-		rows = (int)dictArray.count;
+		if (columns > 0) {
+			for (int i = 0; i < columns; i++)
+				colarr[i] = [NSString stringWithCString:sqlite3_column_name(self.statement, i) encoding:NSUTF8StringEncoding];
+			
+			for (id key in colarr)
+				arrayDict[key] = [NSMutableArray array];
+			
+			id sharedKeySet = [NSDictionary sharedKeySetForKeys:colarr];
+			
+			do {
+				NSMutableDictionary * row = [NSMutableDictionary dictionaryWithSharedKeySet:sharedKeySet];
+				[dictArray addObject:row];
+				for (int i = 0; i < columns; i++) {
+					id key = colarr[i];
+					id obj = [self columnObjectForIndex:i];
+					
+					row[key] = obj;
+					[arrayDict[key] addObject:obj];
+				}
+			} while ((status = sqlite3_step(self.statement)) == SQLITE_ROW);
+			rows = (int)dictArray.count;
+		} else {
+			
+		}
 		
 	done:
 		if (status == SQLITE_DONE)
-			return _result = [ORDAStatementResultImpl statementResultWithChanged:-1 andLastID:-1 andRows:rows andColumns:colarr andDictionaryOfArrays:arrayDict andArrayOfDictionaries:dictArray].retain;
+			return _result = [ORDAStatementResultImpl statementResultWithChanged:changed andLastID:lastID andRows:rows andColumns:colarr andDictionaryOfArrays:arrayDict andArrayOfDictionaries:dictArray].retain;
 		else
 			return _result = (id<ORDAStatementResult>)[ORDASQLiteErrorResult errorWithSQLiteErrorCode:status].retain;
 	}

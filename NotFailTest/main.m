@@ -36,7 +36,7 @@ int main(int argc, const char * argv[])
 			return 0;
 		}
 		
-		id<ORDAStatement> statement = [governor createStatement:@"SELECT * FROM [Track] LIMIT 30"];
+		id<ORDAStatement> statement = [governor createStatement:@"SELECT * FROM Track LIMIT 10"];
 		
 		if (statement.isError) {
 			NSLog(@"Statement error");
@@ -50,9 +50,13 @@ int main(int argc, const char * argv[])
 			return 0;
 		}
 		
-		NSLog(@"Rows: %d, columns: %d", result.rows, result.columns);
-		for (int i = 0; i < result.rows; i++)
-			NSLog(@"%@", result[i][@"AlbumId"]);
+		NSLog(@"Changes: %d, Last ID: %lld, Rows: %d, columns: %d", result.changed, result.lastID, result.rows, result.columns);
+//		for (int i = 0; i < result.rows; i++)
+//			NSLog(@"%@", result[i]);
+		
+		NSLog(@"%@", [governor columnNamesForTableName:@"Track"]);
+		NSLog(@"%@", [governor primaryKeyNamesForTableName:@"Track"]);
+		NSLog(@"%@", [governor foreignKeyTableNamesForTableName:@"Track"]);
 	}
     return 0;
 }

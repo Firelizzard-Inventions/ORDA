@@ -12,6 +12,10 @@
 
 @protocol ORDAGovernor <ORDAResult>
 
-- (id<ORDAStatement>)createStatement:(NSString *)statementSQL;
+- (id<ORDAStatement>)createStatement:(NSString *)format, ... NS_FORMAT_FUNCTION(1,2);
+
+- (NSArray *)columnNamesForTableName:(NSString *)tableName;
+- (NSArray *)primaryKeyNamesForTableName:(NSString *)tableName;
+- (NSArray *)foreignKeyTableNamesForTableName:(NSString *)tableName;
 
 @end

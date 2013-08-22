@@ -14,6 +14,7 @@
 
 @interface ORDASQLiteStatement : ORDAStatementImpl
 
+@property (readonly) sqlite3 * connection;
 @property (readonly) sqlite3_stmt * statement;
 @property (readonly) ORDASQLiteStatement * nextStatement;
 

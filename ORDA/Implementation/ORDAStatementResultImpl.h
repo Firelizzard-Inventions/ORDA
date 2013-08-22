@@ -20,7 +20,7 @@
 + (NSDictionary *)arrayDictFromDictArray:(NSArray *)array andRows:(int)rows andColumns:(NSArray *)columns;
 + (NSArray *)dictArrayFromArrayDict:(NSDictionary *)dict andRows:(int)rows andColumns:(NSArray *)columns;
 
-+ (ORDAStatementResultImpl *)statementResultWithChanged:(int)changed andLastID:(int)lastID andRows:(int)rows andColumns:(NSArray *)columns andDictionaryOfArrays:(NSDictionary *)dict andArrayOfDictionaries:(NSArray *)array;
-- (id)initWithChanged:(int)changed andLastID:(int)lastID andRows:(int)rows andColumns:(NSArray *)columns andDictionaryOfArrays:(NSDictionary *)dict andArrayOfDictionaries:(NSArray *)array;
++ (ORDAStatementResultImpl *)statementResultWithChanged:(int)changed andLastID:(long long)lastID andRows:(int)rows andColumns:(NSArray *)columns andDictionaryOfArrays:(NSDictionary *)dict andArrayOfDictionaries:(NSArray *)array;
+- (id)initWithChanged:(int)changed andLastID:(long long)lastID andRows:(int)rows andColumns:(NSArray *)columns andDictionaryOfArrays:(NSDictionary *)dict andArrayOfDictionaries:(NSArray *)array;
 
 @end

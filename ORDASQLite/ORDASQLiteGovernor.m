@@ -8,6 +8,8 @@
 
 #import "ORDASQLiteGovernor.h"
 
+#import <ORDA/ORDA.h>
+
 #import "ORDADriverResult.h"
 #import "ORDASQLiteConsts.h"
 #import "ORDASQLiteDriver.h"
@@ -49,9 +51,38 @@
 	[super dealloc];
 }
 
-- (id<ORDAStatement>)createStatement:(NSString *)statementSQL
+- (id<ORDAStatement>)createStatement:(NSString *)format, ... NS_FORMAT_FUNCTION(1,2)
 {
+	va_list args;
+	va_start(args, format);
+	NSString * statementSQL = [[[NSString alloc] initWithFormat:format arguments:args] autorelease];
+	va_end(args);
+	
 	return [ORDASQLiteStatement statementWithGovernor:self withSQL:statementSQL];
+}
+
+- (NSArray *)columnNamesForTableName:(NSString *)tableName
+{
+	return [self createStatement:@"PRAGMA table_info(%@)", tableName].result[@"name"];
+}
+
+- (NSArray *)primaryKeyNamesForTableName:(NSString *)tableName
+{
+	id<ORDAStatementResult> result = [self createStatement:@"PRAGMA table_info(%@)", tableName].result;
+	if (!result || result.isError)
+		return nil;
+	
+	NSMutableArray * keys = [NSMutableArray array];
+	for (int i = 0; i < result.rows; i++)
+		if (((NSNumber *)result[i][@"pk"]).boolValue)
+			[keys addObject:result[i][@"name"]];
+	
+	return [NSArray arrayWithArray:keys];
+}
+
+- (NSArray *)foreignKeyTableNamesForTableName:(NSString *)tableName
+{
+	return [self createStatement:@"PRAGMA foreign_key_list(%@)", tableName].result[@"table"];
 }
 
 @end
