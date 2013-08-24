@@ -9,6 +9,7 @@
 #import "ORDAResultImpl.h"
 
 #import "ORDA.h"
+#import "ORDA+Private.h"
 
 @implementation ORDAResultImpl
 

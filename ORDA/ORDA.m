@@ -7,9 +7,9 @@
 //
 
 #import "ORDA.h"
+#import "ORDA+Private.h"
 
-#import "ORDADriver.h"
-//#import "ORDAErrorResult.h"
+#import "ORDAErrorResult.h"
 
 @implementation ORDA {
 	NSMutableDictionary * _registeredDrivers;
@@ -64,18 +64,18 @@
 
 - (id<ORDAGovernor>)governorForURL:(NSURL *)URL
 {
-//	if (!URL)
-//		return (id<ORDAGovernor>)[ORDAErrorResult errorWithCode:kORDANilURLErrorResultCode andProtocol:@protocol(ORDAGovernor)];
+	if (!URL)
+		return (id<ORDAGovernor>)[ORDAErrorResult errorWithCode:kORDANilURLErrorResultCode andProtocol:@protocol(ORDAGovernor)];
 	
 	id<ORDADriver> driver = _registeredDrivers[URL.scheme];
 	
-//	if (!driver)
-//		return (id<ORDAGovernor>)[ORDAErrorResult errorWithCode:kORDAMissingDriverErrorResultCode andProtocol:@protocol(ORDAGovernor)];
+	if (!driver)
+		return (id<ORDAGovernor>)[ORDAErrorResult errorWithCode:kORDAMissingDriverErrorResultCode andProtocol:@protocol(ORDAGovernor)];
 	
 	NSURL * subURL = [NSURL URLWithString:URL.resourceSpecifier];
 	
-//	if (!subURL)
-//		return (id<ORDAGovernor>)[ORDAErrorResult errorWithCode:kORDABadURLErrorResultCode andProtocol:@protocol(ORDAGovernor)];
+	if (!subURL)
+		return (id<ORDAGovernor>)[ORDAErrorResult errorWithCode:kORDABadURLErrorResultCode andProtocol:@protocol(ORDAGovernor)];
 	
 	return [driver governorForURL:subURL];
 }

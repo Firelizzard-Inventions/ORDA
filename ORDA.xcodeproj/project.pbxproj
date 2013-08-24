@@ -104,6 +104,7 @@
 		422D967517C2A61700A974FD /* ORDAStatementImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORDAStatementImpl.m; path = Implementation/ORDAStatementImpl.m; sourceTree = "<group>"; };
 		422D967617C2A61700A974FD /* ORDAStatementResultImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORDAStatementResultImpl.h; path = Implementation/ORDAStatementResultImpl.h; sourceTree = "<group>"; };
 		422D967717C2A61700A974FD /* ORDAStatementResultImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORDAStatementResultImpl.m; path = Implementation/ORDAStatementResultImpl.m; sourceTree = "<group>"; };
+		424B2E7217C71CF1000B354E /* ORDA+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ORDA+Private.h"; sourceTree = "<group>"; };
 		42909B6417B31A4700DBD505 /* ORDA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ORDA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42909B6717B31A4700DBD505 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		42909B6A17B31A4700DBD505 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -234,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				42909B7417B31A4700DBD505 /* ORDA.h */,
+				424B2E7217C71CF1000B354E /* ORDA+Private.h */,
 				42909B7517B31A4700DBD505 /* ORDA.m */,
 				42F06AF017B87810004F2F06 /* Specification */,
 				42F06AAC17B84ADC004F2F06 /* Implementation */,
@@ -388,6 +390,7 @@
 				42909B6017B31A4700DBD505 /* Frameworks */,
 				42909B6117B31A4700DBD505 /* Headers */,
 				42909B6217B31A4700DBD505 /* Resources */,
+				424B2E7317C7210A000B354E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -497,6 +500,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		424B2E7317C7210A000B354E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/appledoc --project-name \"$PROJECT_NAME\" --project-company \"Firelizzard Inventions\" --company-id com.firelizzard --output \"$PROJECT_DIR/help\" --exit-threshold 2 --no-repeat-first-par --logformat xcode .";
+			showEnvVarsInLog = 0;
+		};
 		42909B7A17B31A4700DBD505 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

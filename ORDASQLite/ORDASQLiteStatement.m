@@ -164,10 +164,10 @@ exit:
 	}
 }
 
-- (int)indexOfBindParameter:(NSString *)parameter
-{
-	return sqlite3_bind_parameter_index(self.statement, [parameter cStringUsingEncoding:NSUTF8StringEncoding]);
-}
+//- (int)indexOfBindParameter:(NSString *)parameter
+//{
+//	return sqlite3_bind_parameter_index(self.statement, [parameter cStringUsingEncoding:NSUTF8StringEncoding]);
+//}
 
 - (id<ORDAResult>)bindBlob:(NSData *)data toIndex:(int)index
 {
@@ -205,35 +205,35 @@ exit:
 	}
 }
 
-- (id<ORDAResult>)bindBlob:(NSData *)data toParameter:(NSString *)parameter
-{
-	return [self bindBlob:data toIndex:[self indexOfBindParameter:parameter]];
-}
-
-- (id<ORDAResult>)bindDouble:(NSNumber *)number toParameter:(NSString *)parameter
-{
-	return [self bindDouble:number toIndex:[self indexOfBindParameter:parameter]];
-}
-
-- (id<ORDAResult>)bindInteger:(NSNumber *)number toParameter:(NSString *)parameter
-{
-	return [self bindInteger:number toIndex:[self indexOfBindParameter:parameter]];
-}
-
-- (id<ORDAResult>)bindLong:(NSNumber *)number toParameter:(NSString *)parameter
-{
-	return [self bindLong:number toIndex:[self indexOfBindParameter:parameter]];
-}
-
-- (id<ORDAResult>)bindNullToParameter:(NSString *)parameter
-{
-	return [self bindNullToIndex:[self indexOfBindParameter:parameter]];
-}
-
-- (id<ORDAResult>)bindText:(NSString *)string withEncoding:(NSStringEncoding)encoding toParameter:(NSString *)parameter
-{
-	return [self bindText:string withEncoding:encoding toIndex:[self indexOfBindParameter:parameter]];
-}
+//- (id<ORDAResult>)bindBlob:(NSData *)data toParameter:(NSString *)parameter
+//{
+//	return [self bindBlob:data toIndex:[self indexOfBindParameter:parameter]];
+//}
+//
+//- (id<ORDAResult>)bindDouble:(NSNumber *)number toParameter:(NSString *)parameter
+//{
+//	return [self bindDouble:number toIndex:[self indexOfBindParameter:parameter]];
+//}
+//
+//- (id<ORDAResult>)bindInteger:(NSNumber *)number toParameter:(NSString *)parameter
+//{
+//	return [self bindInteger:number toIndex:[self indexOfBindParameter:parameter]];
+//}
+//
+//- (id<ORDAResult>)bindLong:(NSNumber *)number toParameter:(NSString *)parameter
+//{
+//	return [self bindLong:number toIndex:[self indexOfBindParameter:parameter]];
+//}
+//
+//- (id<ORDAResult>)bindNullToParameter:(NSString *)parameter
+//{
+//	return [self bindNullToIndex:[self indexOfBindParameter:parameter]];
+//}
+//
+//- (id<ORDAResult>)bindText:(NSString *)string withEncoding:(NSStringEncoding)encoding toParameter:(NSString *)parameter
+//{
+//	return [self bindText:string withEncoding:encoding toIndex:[self indexOfBindParameter:parameter]];
+//}
 
 - (id<ORDAResult>)clearBindings
 {
