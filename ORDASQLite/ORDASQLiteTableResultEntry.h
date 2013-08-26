@@ -8,11 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol ORDATable;
+
 @interface ORDASQLiteTableResultEntry : NSDictionary
 
 @property (readonly) NSNumber * rowid;
+@property (readonly) id<ORDATable> table;
 
-+ (ORDASQLiteTableResultEntry *)tableResultEntryWithRowID:(NSNumber *)rowid andData:(NSDictionary *)data;
-- (id)initWithRowID:(NSNumber *)rowid andData:(NSDictionary *)data;
++ (ORDASQLiteTableResultEntry *)tableResultEntryWithRowID:(NSNumber *)rowid andData:(NSDictionary *)data forTable:(id<ORDATable>)table;
+- (id)initWithRowID:(NSNumber *)rowid andData:(NSDictionary *)data forTable:(id<ORDATable>)table;
+
+- (void)update;
 
 @end

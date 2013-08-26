@@ -8,7 +8,7 @@
 
 #import "ORDAGovernorImpl.h"
 
-#import <TypeExtensions/NSObject+abstractProtocolConformer.h>
+//#import <TypeExtensions/NSObject+abstractProtocolConformer.h>
 #import "ORDAErrorResult.h"
 
 #pragma clang diagnostic ignored "-Wprotocol"

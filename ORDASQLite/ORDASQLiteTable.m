@@ -88,13 +88,20 @@
 	if (result.rows < 1)
 		return nil;
 	
-	return rows[rowid] = [ORDASQLiteTableResultEntry tableResultEntryWithRowID:rowid andData:result[0]];
+	return rows[rowid] = [ORDASQLiteTableResultEntry tableResultEntryWithRowID:rowid andData:result[0] forTable:self];
 }
 
-- (id<ORDATableResult>)selectWhere:(NSString *)clause
+- (id<ORDATableResult>)selectWhere:(NSString *)format, ... NS_FORMAT_FUNCTION(1,2);
 {
-	if (!clause)
+	NSString * clause = nil;
+	if (!format)
 		clause = @"1";
+	else {
+		va_list args;
+		va_start(args, format);
+		clause = [[[NSString alloc] initWithFormat:format arguments:args] autorelease];
+		va_end(args);
+	}
 	
 	id<ORDAStatement> stmt = [self.governor createStatement:@"SELECT rowid as 'rowid' FROM %@ WHERE %@", self.name, clause];
 	if (stmt.isError)
@@ -130,10 +137,17 @@
 	return [ORDATableResultImpl tableResultWithObject:[self selectWhereRowidEquals:@(result.lastID)]];
 }
 
-- (id<ORDATableResult>)updateSet:(NSString *)column to:(id)value where:(NSString *)clause
+- (id<ORDATableResult>)updateSet:(NSString *)column to:(id)value where:(NSString *)format, ... NS_FORMAT_FUNCTION(1,4);
 {
-	if (!clause)
+	NSString * clause = nil;
+	if (!format)
 		clause = @"1";
+	else {
+		va_list args;
+		va_start(args, format);
+		clause = [[[NSString alloc] initWithFormat:format arguments:args] autorelease];
+		va_end(args);
+	}
 	
 	id<ORDAStatement> stmt = [self.governor createStatement:@"UPDATE %@ SET [%@] = '%@' WHERE %@", self.name, column, value, clause];
 	if (stmt.isError)
@@ -143,7 +157,7 @@
 	if (result.isError)
 		return nil;
 	
-	return [self selectWhere:clause];
+	return [self selectWhere:@"%@", clause];
 }
 
 - (void)updateDidOccur:(int)update toRowID:(NSNumber *)rowid
@@ -153,27 +167,7 @@
 			break;
 			
 		case SQLITE_UPDATE:
-			;
-			id entry = rows[rowid];
-			
-			if (!entry)
-				break;
-			
-			id<ORDAStatement> stmt = [self.governor createStatement:@"SELECT * FROM %@ WHERE rowid = %@", self.name, rowid];
-			if (stmt.isError)
-				break;
-			
-			id<ORDAStatementResult> result = stmt.result;
-			if (result.isError)
-				break;
-			if (result.rows < 1)
-				break;
-			
-			NSDictionary * newData = result[0];
-			for (id key in newData)
-				if (![[entry valueForKey:key] isEqual:newData[key]])
-					[entry setValue:newData[key] forKey:key];
-			
+			[(ORDASQLiteTableResultEntry *)rows[rowid] update];
 			break;
 			
 		case SQLITE_DELETE:

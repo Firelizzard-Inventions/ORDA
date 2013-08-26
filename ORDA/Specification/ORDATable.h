@@ -18,8 +18,8 @@
 - (NSArray *)primaryKeyNames;
 - (NSArray *)foreignKeyTableNames;
 
-- (id<ORDATableResult>)selectWhere:(NSString *)clause;
+- (id<ORDATableResult>)selectWhere:(NSString *)format, ... NS_FORMAT_FUNCTION(1,2);
 - (id<ORDATableResult>)insertValues:(id)values;
-- (id<ORDATableResult>)updateSet:(NSString *)column to:(id)value where:(NSString *)clause;
+- (id<ORDATableResult>)updateSet:(NSString *)column to:(id)value where:(NSString *)format, ... NS_FORMAT_FUNCTION(1,4);
 
 @end

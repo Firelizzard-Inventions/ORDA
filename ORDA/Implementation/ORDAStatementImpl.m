@@ -8,7 +8,7 @@
 
 #import "ORDAStatementImpl.h"
 
-#import <TypeExtensions/NSObject+abstractProtocolConformer.h>
+//#import <TypeExtensions/NSObject+abstractProtocolConformer.h>
 #import "ORDAGovernor.h"
 #import "ORDAErrorResult.h"
 
