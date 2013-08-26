@@ -15,6 +15,18 @@
 #import "ORDASQLiteDriver.h"
 #import "ORDASQLiteErrorResult.h"
 #import "ORDASQLiteStatement.h"
+#import "ORDASQLiteTable.h"
+
+@interface ORDASQLiteGovernor ()
+
+@property (readonly) NSMutableDictionary * tables;
+
+@end
+
+void update_hook(ORDASQLiteGovernor * gov, int type, char const * dbname, char const * tbname, sqlite3_int64 rowid)
+{
+	[gov.tables[@(tbname)] updateDidOccur:type toRowID:@(rowid)];
+}
 
 @implementation ORDASQLiteGovernor
 
@@ -40,6 +52,8 @@
 	if (status != SQLITE_OK)
 		return (ORDASQLiteGovernor *)[ORDASQLiteErrorResult errorWithCode:(ORDACode)kORDAConnectionErrorResultCode andSQLiteErrorCode:status].retain;
 	
+	_tables = [[NSMutableDictionary dictionary] retain];
+	
 	return self;
 }
 
@@ -61,28 +75,12 @@
 	return [ORDASQLiteStatement statementWithGovernor:self withSQL:statementSQL];
 }
 
-- (NSArray *)columnNamesForTableName:(NSString *)tableName
+- (id<ORDATable>)createTable:(NSString *)tableName
 {
-	return [self createStatement:@"PRAGMA table_info(%@)", tableName].result[@"name"];
-}
-
-- (NSArray *)primaryKeyNamesForTableName:(NSString *)tableName
-{
-	id<ORDAStatementResult> result = [self createStatement:@"PRAGMA table_info(%@)", tableName].result;
-	if (!result || result.isError)
-		return nil;
+	if (self.tables[tableName])
+		return self.tables[tableName];
 	
-	NSMutableArray * keys = [NSMutableArray array];
-	for (int i = 0; i < result.rows; i++)
-		if (((NSNumber *)result[i][@"pk"]).boolValue)
-			[keys addObject:result[i][@"name"]];
-	
-	return [NSArray arrayWithArray:keys];
-}
-
-- (NSArray *)foreignKeyTableNamesForTableName:(NSString *)tableName
-{
-	return [self createStatement:@"PRAGMA foreign_key_list(%@)", tableName].result[@"table"];
+	return self.tables[tableName] = [ORDASQLiteTable tableWithGovernor:self withName:tableName];
 }
 
 @end

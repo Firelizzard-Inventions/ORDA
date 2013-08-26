@@ -13,41 +13,6 @@
 
 @implementation ORDAStatementResultImpl
 
-//+ (NSDictionary *)arrayDictFromDictArray:(NSArray *)array andRows:(int)rows andColumns:(NSArray *)columns
-//{
-//	NSMutableDictionary * dict = [NSMutableDictionary dictionaryWithCapacity:rows];
-//	for (id key in columns)
-//		dict[key] = [NSMutableArray arrayWithCapacity:array.count];
-//	
-//	for (int i = 0; i < array.count; i++)
-//		for (id key in array[i])
-//			dict[key][i] = array[i][key];
-//	
-//	NSMutableDictionary * temp = [NSMutableDictionary dictionaryWithCapacity:rows];
-//	for (id key in dict)
-//		temp[key] = [NSArray arrayWithArray:dict[key]];
-//	
-//	return [NSDictionary dictionaryWithDictionary:temp];
-//}
-
-//+ (NSArray *)dictArrayFromArrayDict:(NSDictionary *)dict andRows:(int)rows andColumns:(NSArray *)columns
-//{
-//	id sharedKeySet = [NSDictionary sharedKeySetForKeys:columns];
-//	NSMutableArray * array = [NSMutableArray arrayWithCapacity:rows];
-//	for (int i = 0; i < rows; i++)
-//		array[i] = [NSMutableDictionary dictionaryWithSharedKeySet:sharedKeySet];
-//	
-//	for (id key in dict)
-//		for (int i = 0; i < rows; i++)
-//			array[i][key] = dict[key][i];
-//	
-//	NSMutableArray * temp = [NSMutableArray arrayWithCapacity:rows];
-//	for (int i = 0; i < rows; i++)
-//		temp[i] = [NSDictionary dictionaryWithDictionary:array[i]];
-//	
-//	return [NSArray arrayWithArray:temp];
-//}
-
 + (ORDAStatementResultImpl *)statementResultWithChanged:(int)changed andLastID:(long long)lastID andRows:(int)rows andColumns:(NSArray *)columns andDictionaryOfArrays:(NSDictionary *)dict andArrayOfDictionaries:(NSArray *)array
 {
 	return [[[ORDAStatementResultImpl alloc] initWithChanged:changed andLastID:lastID andRows:rows andColumns:columns andDictionaryOfArrays:dict andArrayOfDictionaries:array] autorelease];

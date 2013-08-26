@@ -25,7 +25,8 @@ typedef enum {
 typedef enum {
 	kORDAResultCodeInternalErrorSubclass = 0x0100 | kORDAResultCodeErrorClass,
 	kORDAResultCodeConnectionErrorSubclass = 0x0200 | kORDAResultCodeErrorClass,
-	kORDAResultCodeStatementErrorSubclass = 0x0300 | kORDAResultCodeErrorClass
+	kORDAResultCodeStatementErrorSubclass = 0x0300 | kORDAResultCodeErrorClass,
+	kORDAResultCodeTableErrorClass = 0x0400 | kORDAResultCodeErrorClass
 } ORDAResultCodeErrorSubclass;
 
 typedef enum {
@@ -49,6 +50,9 @@ typedef enum {
 	kORDANilGovernorErrorResultCode,
 	kORDANilStatementSQLErrorResultCode,
 	kORDABadStatementSQLErrorResultCode,
-	kORDABadBindIndexErrorResultCode
+	kORDABadBindIndexErrorResultCode,
+	
+	kORDATableErrorResultCode = kORDAResultCodeTableErrorClass,
+	kORDANilTableNameErrorResultCode
 	
 } ORDAResultCode;

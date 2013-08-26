@@ -29,10 +29,9 @@
 		return (ORDASQLiteStatement *)[ORDASQLiteErrorResult errorWithCode:kORDAInternalAPIMismatchErrorResultCode].retain;
 	
 	_result = nil;
-	_connection = ((ORDASQLiteGovernor *)governor).connection;
 	
 	char * rest;
-	int status = sqlite3_prepare_v2(self.connection, [SQL cStringUsingEncoding:NSASCIIStringEncoding], (int)SQL.length, &_statement, (const char **) &rest);
+	int status = sqlite3_prepare_v2(((ORDASQLiteGovernor *)self.governor).connection, [SQL cStringUsingEncoding:NSASCIIStringEncoding], (int)SQL.length, &_statement, (const char **) &rest);
 	if (status != SQLITE_OK)
 		return (ORDASQLiteStatement *)[ORDASQLiteErrorResult errorWithCode:(ORDACode)kORDABadStatementSQLErrorResultCode andSQLiteErrorCode:status].retain;
 	
@@ -41,7 +40,7 @@
 		goto exit;
 	}
 	
-	_nextStatement = [[ORDASQLiteStatement alloc] initWithGovernor:governor withSQL:[NSString stringWithCString:rest encoding:NSASCIIStringEncoding]];
+	_nextStatement = [[ORDASQLiteStatement alloc] initWithGovernor:governor withSQL:@(rest)];
 	if (!_nextStatement)
 		return (ORDASQLiteStatement *)[ORDASQLiteErrorResult errorWithCode:(ORDACode)kORDAInternalErrorResultCode].retain;
 	if (_nextStatement.isError)
@@ -69,8 +68,8 @@ exit:
 		
 		int rows = -1;
 		int columns = sqlite3_column_count(self.statement);
-		int changed = sqlite3_changes(self.connection);
-		long long lastID = sqlite3_last_insert_rowid(self.connection);
+		int changed = sqlite3_changes(((ORDASQLiteGovernor *)self.governor).connection);
+		long long lastID = sqlite3_last_insert_rowid(((ORDASQLiteGovernor *)self.governor).connection);
 		
 		NSMutableArray * colarr = [NSMutableArray arrayWithCapacity:columns];
 		NSMutableDictionary * arrayDict = [NSMutableDictionary dictionaryWithCapacity:columns];
@@ -78,7 +77,7 @@ exit:
 		
 		if (columns > 0) {
 			for (int i = 0; i < columns; i++)
-				colarr[i] = [NSString stringWithCString:sqlite3_column_name(self.statement, i) encoding:NSUTF8StringEncoding];
+				colarr[i] = @(sqlite3_column_name(self.statement, i));
 			
 			for (id key in colarr)
 				arrayDict[key] = [NSMutableArray array];
@@ -164,11 +163,6 @@ exit:
 	}
 }
 
-//- (int)indexOfBindParameter:(NSString *)parameter
-//{
-//	return sqlite3_bind_parameter_index(self.statement, [parameter cStringUsingEncoding:NSUTF8StringEncoding]);
-//}
-
 - (id<ORDAResult>)bindBlob:(NSData *)data toIndex:(int)index
 {
 	return [ORDASQLiteErrorResult errorWithSQLiteErrorCode:sqlite3_bind_blob(self.statement, index, [data bytes], (int)[data length], SQLITE_STATIC)];
@@ -204,36 +198,6 @@ exit:
 		return [ORDASQLiteErrorResult errorWithCode:kORDASQLiteUnsupportedEncodingErrorResultCode];
 	}
 }
-
-//- (id<ORDAResult>)bindBlob:(NSData *)data toParameter:(NSString *)parameter
-//{
-//	return [self bindBlob:data toIndex:[self indexOfBindParameter:parameter]];
-//}
-//
-//- (id<ORDAResult>)bindDouble:(NSNumber *)number toParameter:(NSString *)parameter
-//{
-//	return [self bindDouble:number toIndex:[self indexOfBindParameter:parameter]];
-//}
-//
-//- (id<ORDAResult>)bindInteger:(NSNumber *)number toParameter:(NSString *)parameter
-//{
-//	return [self bindInteger:number toIndex:[self indexOfBindParameter:parameter]];
-//}
-//
-//- (id<ORDAResult>)bindLong:(NSNumber *)number toParameter:(NSString *)parameter
-//{
-//	return [self bindLong:number toIndex:[self indexOfBindParameter:parameter]];
-//}
-//
-//- (id<ORDAResult>)bindNullToParameter:(NSString *)parameter
-//{
-//	return [self bindNullToIndex:[self indexOfBindParameter:parameter]];
-//}
-//
-//- (id<ORDAResult>)bindText:(NSString *)string withEncoding:(NSStringEncoding)encoding toParameter:(NSString *)parameter
-//{
-//	return [self bindText:string withEncoding:encoding toIndex:[self indexOfBindParameter:parameter]];
-//}
 
 - (id<ORDAResult>)clearBindings
 {

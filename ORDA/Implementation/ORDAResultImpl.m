@@ -18,6 +18,11 @@
 	return [[[self alloc] initWithCode:code] autorelease];
 }
 
+- (id)init
+{
+	return nil;
+}
+
 - (id)initWithCode:(ORDAResultCode)code
 {
 	if (!(self = [super init]))

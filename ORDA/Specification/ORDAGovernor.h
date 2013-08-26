@@ -8,14 +8,11 @@
 
 #import "ORDAResult.h"
 
-@protocol ORDAStatement;
+@protocol ORDAStatement, ORDATable;
 
 @protocol ORDAGovernor <ORDAResult>
 
 - (id<ORDAStatement>)createStatement:(NSString *)format, ... NS_FORMAT_FUNCTION(1,2);
-
-- (NSArray *)columnNamesForTableName:(NSString *)tableName;
-- (NSArray *)primaryKeyNamesForTableName:(NSString *)tableName;
-- (NSArray *)foreignKeyTableNamesForTableName:(NSString *)tableName;
+- (id<ORDATable>)createTable:(NSString *)tableName;
 
 @end
