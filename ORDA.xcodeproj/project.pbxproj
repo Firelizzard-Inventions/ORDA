@@ -12,6 +12,8 @@
 		422D966517C2A60400A974FD /* ORDAResultConsts.h in Headers */ = {isa = PBXBuildFile; fileRef = 422D965C17C2A60400A974FD /* ORDAResultConsts.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		422D966717C2A60400A974FD /* ORDAStatement.h in Headers */ = {isa = PBXBuildFile; fileRef = 422D965E17C2A60400A974FD /* ORDAStatement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		422D966817C2A60400A974FD /* ORDAStatementResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 422D965F17C2A60400A974FD /* ORDAStatementResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4257E7AE17CAD51400ACF70C /* TypeExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4253CD6F17CAD4B000DB39B7 /* TypeExtensions.framework */; };
+		4257E7AF17CAD51A00ACF70C /* TypeExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4253CD6F17CAD4B000DB39B7 /* TypeExtensions.framework */; };
 		42719C7C17C99A3E007AAB83 /* ORDATable.h in Headers */ = {isa = PBXBuildFile; fileRef = 42719C7B17C99A32007AAB83 /* ORDATable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		42719C7E17C99A54007AAB83 /* ORDATableResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 42719C7D17C99A4E007AAB83 /* ORDATableResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		42719C8217C9A12B007AAB83 /* ORDATableImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 42719C8017C9A12B007AAB83 /* ORDATableImpl.h */; };
@@ -29,8 +31,7 @@
 		42909B8217B31A4700DBD505 /* ORDA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42909B6417B31A4700DBD505 /* ORDA.framework */; };
 		42909B8817B31A4700DBD505 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42909B8617B31A4700DBD505 /* InfoPlist.strings */; };
 		42909B8B17B31A4700DBD505 /* ORDATests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42909B8A17B31A4700DBD505 /* ORDATests.m */; };
-		42B00ADA17C3374A000B13E7 /* TypeExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F06AD517B86654004F2F06 /* TypeExtensions.framework */; };
-		42B00ADE17C33777000B13E7 /* TypeExtensions.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 42F06AD517B86654004F2F06 /* TypeExtensions.framework */; };
+		42B00ADE17C33777000B13E7 /* (null) in CopyFiles */ = {isa = PBXBuildFile; };
 		42B00AF617C3402F000B13E7 /* Chinook_Sqlite.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 42B00AF517C3402F000B13E7 /* Chinook_Sqlite.sqlite */; };
 		42B00B2417C53A9F000B13E7 /* ORDA.m in Sources */ = {isa = PBXBuildFile; fileRef = 42909B7517B31A4700DBD505 /* ORDA.m */; };
 		42B00B2517C53AD8000B13E7 /* ORDAResultImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B00B1D17C40B48000B13E7 /* ORDAResultImpl.m */; };
@@ -60,7 +61,6 @@
 		42B00BF917C66CF5000B13E7 /* ORDASQLite.h in Headers */ = {isa = PBXBuildFile; fileRef = 42B00BDB17C66C72000B13E7 /* ORDASQLite.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		42B00BFA17C66D1C000B13E7 /* ORDA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42909B6417B31A4700DBD505 /* ORDA.framework */; };
 		42B00BFD17C66D39000B13E7 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B00BFC17C66D38000B13E7 /* libsqlite3.0.dylib */; };
-		42B00BFE17C66DC3000B13E7 /* TypeExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F06AD517B86654004F2F06 /* TypeExtensions.framework */; };
 		42B00C1B17C6BA66000B13E7 /* ORDASQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B00BD217C66C72000B13E7 /* ORDASQLite.framework */; };
 		42B00C1C17C6BA6E000B13E7 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B00BFC17C66D38000B13E7 /* libsqlite3.0.dylib */; };
 		42B00C3317C6C65D000B13E7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 42B00C2D17C6C54D000B13E7 /* README.md */; };
@@ -71,6 +71,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4253CD6E17CAD4B000DB39B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4253CD6A17CAD4B000DB39B7 /* TypeExtensions.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 420D1A9C165BF5020097EE03;
+			remoteInfo = TypeExtensions;
+		};
 		42B00C2717C6C3A7000B13E7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 42909B5B17B31A4700DBD505 /* Project object */;
@@ -94,7 +101,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 11;
 			files = (
-				42B00ADE17C33777000B13E7 /* TypeExtensions.framework in CopyFiles */,
+				42B00ADE17C33777000B13E7 /* (null) in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +122,7 @@
 		422D967617C2A61700A974FD /* ORDAStatementResultImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORDAStatementResultImpl.h; path = Implementation/ORDAStatementResultImpl.h; sourceTree = "<group>"; };
 		422D967717C2A61700A974FD /* ORDAStatementResultImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORDAStatementResultImpl.m; path = Implementation/ORDAStatementResultImpl.m; sourceTree = "<group>"; };
 		424B2E7217C71CF1000B354E /* ORDA+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ORDA+Private.h"; sourceTree = "<group>"; };
+		4253CD6A17CAD4B000DB39B7 /* TypeExtensions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TypeExtensions.xcodeproj; path = Include/TypeExtensions/TypeExtensions.xcodeproj; sourceTree = "<group>"; };
 		42719C7B17C99A32007AAB83 /* ORDATable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ORDATable.h; path = Specification/ORDATable.h; sourceTree = "<group>"; };
 		42719C7D17C99A4E007AAB83 /* ORDATableResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ORDATableResult.h; path = Specification/ORDATableResult.h; sourceTree = "<group>"; };
 		42719C8017C9A12B007AAB83 /* ORDATableImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORDATableImpl.h; path = Implementation/ORDATableImpl.h; sourceTree = "<group>"; };
@@ -166,7 +174,6 @@
 		42B00C2D17C6C54D000B13E7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		42B00C3417C6C669000B13E7 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		42F06AC817B8627D004F2F06 /* ORDADriver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ORDADriver.h; path = Specification/ORDADriver.h; sourceTree = "<group>"; };
-		42F06AD517B86654004F2F06 /* TypeExtensions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TypeExtensions.framework; path = ../CORM/DerivedData/CORM/Build/Products/Debug/TypeExtensions.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,7 +181,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42B00ADA17C3374A000B13E7 /* TypeExtensions.framework in Frameworks */,
+				4257E7AE17CAD51400ACF70C /* TypeExtensions.framework in Frameworks */,
 				42909B6817B31A4700DBD505 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,7 +202,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42B00BFE17C66DC3000B13E7 /* TypeExtensions.framework in Frameworks */,
+				4257E7AF17CAD51A00ACF70C /* TypeExtensions.framework in Frameworks */,
 				42B00BFD17C66D39000B13E7 /* libsqlite3.0.dylib in Frameworks */,
 				42B00BFA17C66D1C000B13E7 /* ORDA.framework in Frameworks */,
 				42B00BD317C66C72000B13E7 /* Cocoa.framework in Frameworks */,
@@ -205,6 +212,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4253CD6B17CAD4B000DB39B7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4253CD6F17CAD4B000DB39B7 /* TypeExtensions.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		42909B5A17B31A4700DBD505 = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +231,7 @@
 				42F06AFE17B878A9004F2F06 /* Libraries */,
 				42909B6617B31A4700DBD505 /* Frameworks */,
 				42909B6517B31A4700DBD505 /* Products */,
+				4253CD6A17CAD4B000DB39B7 /* TypeExtensions.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -232,7 +248,6 @@
 		42909B6617B31A4700DBD505 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				42F06AD517B86654004F2F06 /* TypeExtensions.framework */,
 				42909B6717B31A4700DBD505 /* Cocoa.framework */,
 				42909B7D17B31A4700DBD505 /* SenTestingKit.framework */,
 				42B00AE417C337D9000B13E7 /* Foundation.framework */,
@@ -495,6 +510,12 @@
 			mainGroup = 42909B5A17B31A4700DBD505;
 			productRefGroup = 42909B6517B31A4700DBD505 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 4253CD6B17CAD4B000DB39B7 /* Products */;
+					ProjectRef = 4253CD6A17CAD4B000DB39B7 /* TypeExtensions.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				42909B6317B31A4700DBD505 /* ORDA */,
@@ -503,6 +524,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		4253CD6F17CAD4B000DB39B7 /* TypeExtensions.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = TypeExtensions.framework;
+			remoteRef = 4253CD6E17CAD4B000DB39B7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		42909B6217B31A4700DBD505 /* Resources */ = {
@@ -749,10 +780,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ORDA/ORDA-Prefix.pch";
 				INFOPLIST_FILE = "ORDATests/ORDATests-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../3rd Party/mysql-connector-c-6.1.1-osx10.7-x86_64/lib\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -769,10 +797,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ORDA/ORDA-Prefix.pch";
 				INFOPLIST_FILE = "ORDATests/ORDATests-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../3rd Party/mysql-connector-c-6.1.1-osx10.7-x86_64/lib\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
