@@ -12,6 +12,9 @@
 
 @protocol ORDAGovernor;
 
+/**
+ * ORDATableImpl is a partial implementation of ORDATable.
+ */
 @interface ORDATableImpl : ORDAResultImpl <ORDATable>
 
 @property (readonly) NSString * name;

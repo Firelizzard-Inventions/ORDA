@@ -10,9 +10,21 @@
 
 #import "ORDAResult.h"
 
+/**
+ * The ORDATableResult protocol is the protocol that all results from ORDATable
+ * must conform to.
+ */
 @protocol ORDATableResult <ORDAResult>
 
+/**
+ * @return the number of contained result rows
+ */
 - (NSUInteger)count;
+
+/**
+ * @param idx the index
+ * @return the idx'th result row contained in this result object/array.
+ */
 - (id)objectAtIndexedSubscript:(NSUInteger)idx;
 
 @end

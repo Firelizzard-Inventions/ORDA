@@ -11,7 +11,10 @@
 
 @protocol ORDAGovernor;
 
-@interface ORDAStatementImpl : ORDAResultImpl <ORDAStatement, NSFastEnumeration>
+/**
+ * ORDAStatementImpl is a partial implementation of ORDAStatement.
+ */
+@interface ORDAStatementImpl : ORDAResultImpl <ORDAStatement>
 
 @property (readonly) NSString * statementSQL;
 @property (readonly) id<ORDAGovernor> governor;

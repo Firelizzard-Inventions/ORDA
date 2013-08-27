@@ -10,6 +10,10 @@
 
 @protocol ORDATable;
 
+/**
+ * ORDASQLiteTableResultEntry is a custom subclass of NSDictionary that is used
+ * as the row object for table results for ORDA SQLite.
+ */
 @interface ORDASQLiteTableResultEntry : NSDictionary
 
 @property (readonly) NSNumber * rowid;

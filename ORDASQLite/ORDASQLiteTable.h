@@ -8,6 +8,9 @@
 
 #import "ORDATableImpl.h"
 
+/**
+ * ORDASQLiteTable is the ORDA SQLite implementation of ORDATable.
+ */
 @interface ORDASQLiteTable : ORDATableImpl
 
 - (void)updateDidOccur:(int)update toRowID:(NSNumber *)rowid;

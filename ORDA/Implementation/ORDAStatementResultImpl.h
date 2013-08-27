@@ -10,6 +10,9 @@
 
 #import "ORDAStatementResult.h"
 
+/**
+ * ORDAStatementResultImpl is an implementation of ORDAStatementResult.
+ */
 @interface ORDAStatementResultImpl : ORDAResultImpl <ORDAStatementResult>
 
 @property (readonly) int changed;

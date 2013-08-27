@@ -28,11 +28,18 @@
  * prefix (the scheme) and the manager (this class) determines the correct ORDA
  * driver to handle said scheme and passes the URL to it, generating a governor.
  * @see ORDAResult
+ * @see ORDADriver
+ * @see ORDAGovernor
+ * @see ORDAStatement
+ * @see ORDAStatementResult
+ * @see ORDATable
+ * @see ORDATableResult
+ * @see ORDASQLite
  */
 @interface ORDA : NSObject_Singleton
 
 /** ----------------------------------------------------------------------------
- * @name Registering Drivers
+ * @name Drivers
  */
 
 /**
@@ -45,7 +52,7 @@
 - (void)registerDriver:(id<ORDADriver>)driver;
 
 /** ----------------------------------------------------------------------------
- * @name Retreiving Governors
+ * @name Governors
  */
 
 /**

@@ -9,6 +9,9 @@
 #import <TypeExtensions/NSObject_Singleton.h>
 #import "ORDADriver.h"
 
+/**
+ * The ORDA MySQL implementation of ORDADriver.
+ */
 @interface ORDAMySQLDriver : NSObject_Singleton <ORDADriver>
 
 @end

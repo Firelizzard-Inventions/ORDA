@@ -9,6 +9,9 @@
 #import "ORDAResultImpl.h"
 #import "ORDAGovernor.h"
 
+/**
+ * ORDAGovernorImpl is a partial implementation of ORDAGovernor.
+ */
 @interface ORDAGovernorImpl : ORDAResultImpl <ORDAGovernor>
 
 @end

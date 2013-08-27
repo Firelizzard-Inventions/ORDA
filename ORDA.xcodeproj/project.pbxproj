@@ -441,7 +441,7 @@
 				42909B6017B31A4700DBD505 /* Frameworks */,
 				42909B6117B31A4700DBD505 /* Headers */,
 				42909B6217B31A4700DBD505 /* Resources */,
-				424B2E7317C7210A000B354E /* ShellScript */,
+				42CBE03717CC336900AA0E82 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -567,20 +567,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		424B2E7317C7210A000B354E /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/appledoc --project-name \"$PROJECT_NAME\" --project-company \"Firelizzard Inventions\" --company-id com.firelizzard --output \"$PROJECT_DIR/help\" --exit-threshold 2 --no-repeat-first-par --logformat xcode .";
-			showEnvVarsInLog = 0;
-		};
 		42909B7A17B31A4700DBD505 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -593,6 +579,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		42CBE03717CC336900AA0E82 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = env;
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 

@@ -16,6 +16,10 @@
  */
 @protocol ORDADriver <NSObject>
 
+/** ----------------------------------------------------------------------------
+ * @name Properties
+ */
+
 /**
  * This driver's URL scheme
  * @return the scheme
@@ -24,6 +28,10 @@
  * something that the API consumer should not need to do.
  */
 - (NSString *)scheme;
+
+/** ----------------------------------------------------------------------------
+ * @name Governors
+ */
 
 /**
  * Generates a governor for a URL

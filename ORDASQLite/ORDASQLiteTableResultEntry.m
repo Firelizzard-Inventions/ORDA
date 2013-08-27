@@ -8,6 +8,7 @@
 
 #import "ORDASQLiteTableResultEntry.h"
 
+#import "ORDAGovernor.h"
 #import "ORDAStatement.h"
 #import "ORDAStatementResult.h"
 #import "ORDATable.h"
@@ -106,7 +107,7 @@
 
 - (void)update
 {
-	id<ORDAStatement> stmt = [self.table.governor createStatement:@"SELECT * FROM %@ WHERE rowid = %@", self.name, rowid];
+	id<ORDAStatement> stmt = [((ORDATableImpl *)self.table).governor createStatement:@"SELECT * FROM %@ WHERE rowid = %@", self.table.name, self.rowid];
 	if (stmt.isError)
 		return;
 	
@@ -133,7 +134,7 @@
 	if (object != self)
 		return;
 	
-	NSLock * lock = _locks[key];
+	NSLock * lock = _locks[keyPath];
 	if (![lock tryLock])
 		return;
 	

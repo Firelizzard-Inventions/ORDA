@@ -10,6 +10,9 @@
 
 #import <sqlite3.h>
 
+/**
+ * ORDASQLiteStatement is the ORDA SQLite implementation of ORDAStatement.
+ */
 @interface ORDASQLiteStatement : ORDAStatementImpl
 
 //@property (readonly) sqlite3 * connection;

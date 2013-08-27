@@ -10,6 +10,9 @@
 
 #import "ORDATableResult.h"
 
+/**
+ * ORDATableResultImpl is an implementation of ORDATableResult.
+ */
 @interface ORDATableResultImpl : ORDAResultImpl <ORDATableResult>
 
 + (ORDATableResultImpl *)tableResultWithArray:(NSArray *)array;

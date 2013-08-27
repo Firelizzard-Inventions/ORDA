@@ -10,6 +10,9 @@
 
 #import "ORDASQLiteConsts.h"
 
+/**
+ * ORDASQLiteErrorResult is an ORDA SQLite subclass of ORDADriverResult.
+ */
 @interface ORDASQLiteErrorResult : ORDADriverResult
 
 @property (readonly) int status;

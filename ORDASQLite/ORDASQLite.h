@@ -8,9 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ * ORDASQLite is the only outward facing component of the ORDA SQLite driver.
+ */
 @interface ORDASQLite : NSObject
 
+/**
+ * Registers the ORDA SQLite driver
+ */
 + (void)register;
+
+/**
+ * @returns "sqlite", the ORDA SQLite URL scheme
+ */
 + (NSString *)scheme;
 
 @end

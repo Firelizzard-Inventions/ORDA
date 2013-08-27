@@ -10,6 +10,9 @@
 
 #import <sqlite3.h>
 
+/**
+ * ORDASQLiteGovernor is the ORDA SQLite implementation of ORDAGovernor.
+ */
 @interface ORDASQLiteGovernor : ORDAGovernorImpl
 
 @property (readonly) sqlite3 * connection;

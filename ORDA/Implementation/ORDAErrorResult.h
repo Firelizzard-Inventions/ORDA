@@ -10,6 +10,10 @@
 
 #import "ORDAResult.h"
 
+/**
+ * ORDAErrorResult is an implementation of ORDAResult that is used to return
+ * error codes.
+ */
 @interface ORDAErrorResult : NSObject_ProtocolConformer <ORDAResult>
 
 @property (readonly) ORDAResultCode code;

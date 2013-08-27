@@ -10,6 +10,10 @@
 
 @protocol ORDADriver;
 
+/**
+ * ORDADriverResult is a subclass of ORDAResult that is used to return driver
+ * specific error codes.
+ */
 @interface ORDADriverResult : ORDAErrorResult
 
 @property (readonly) id<ORDADriver> driver;

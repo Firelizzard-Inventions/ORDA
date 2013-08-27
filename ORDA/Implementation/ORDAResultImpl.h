@@ -8,6 +8,9 @@
 
 #import "ORDAResult.h"
 
+/**
+ * ORDAResultImpl is an implementation of ORDAResult.
+ */
 @interface ORDAResultImpl : NSObject <ORDAResult>
 
 @property (readonly) ORDAResultCode code;

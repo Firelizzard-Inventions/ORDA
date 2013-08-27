@@ -22,11 +22,19 @@
  */
 @protocol ORDAResult <NSObject>
 
+/** ----------------------------------------------------------------------------
+ * @name Properties
+ */
+
 /**
  * The code of this result
  * @return the code
  */
 - (ORDAResultCode)code;
+
+/** ----------------------------------------------------------------------------
+ * @name Classification
+ */
 
 /**
  * @return true if this result's code is an error code
