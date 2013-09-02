@@ -26,6 +26,10 @@
  */
 @protocol ORDATable <ORDAResult>
 
+/** ----------------------------------------------------------------------------
+ * @name Metadata
+ */
+
 /**
  * @return the associated table's name
  */
@@ -45,6 +49,10 @@
  * @return the associated table's foreign key's names
  */
 - (NSArray *)foreignKeyTableNames;
+
+/** ----------------------------------------------------------------------------
+ * @name Retreiving Row Entities
+ */
 
 /**
  * Selects from the table
@@ -80,5 +88,22 @@
  * WHERE <whereClause>'.
  */
 - (id<ORDATableResult>)updateSet:(NSString *)column to:(id)value where:(NSString *)format, ... NS_FORMAT_FUNCTION(1,4);
+
+/** ----------------------------------------------------------------------------
+ * @name Updating Row Entities
+ */
+
+/**
+ * Notifies the table of an update
+ * @param type the update type
+ * @param key the updated row's key
+ * @return a result code (success or otherwise)
+ * @discussion This method is used internally by drivers that have a mechanism
+ * for inserting update hooks, thus providing automatic updating of table
+ * entities. Some drivers do not natively have this capability.
+ * @warning Interpretation of the key parameter is driver dependent and may be
+ * unintuitive, especially for drivers that implement automatic updating.
+ */
+- (id<ORDAResult>)tableUpdateDidOccur:(ORDATableUpdateType)type toRowWithKey:(id)key;
 
 @end

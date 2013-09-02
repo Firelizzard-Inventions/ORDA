@@ -21,17 +21,17 @@
 /**
  * @return the number of inserted, updated, or deleted rows or -1 for select
  */
-- (int)changed;
+- (long long)changed;
 
 /**
  * @return the number of result rows
  */
-- (int)rows;
+- (long)rows;
 
 /**
  * @return the number of result columns
  */
-- (int)columns;
+- (long)columns;
 
 /**
  * @return the ID of the last inserted row, or -1 for select, update, or delete

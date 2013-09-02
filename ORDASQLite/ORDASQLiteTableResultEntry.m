@@ -33,6 +33,7 @@
 	
 	_backing = [[NSMutableDictionary alloc] initWithObjects:objects forKeys:keys count:cnt];
 	_rowid = nil;
+	_table = nil;
 	
 	id locks[cnt];
 	for (int i = 0; i < cnt; i++)

@@ -18,7 +18,7 @@
 
 @property (readonly) ORDAResultCode code;
 
-+ (id<NSObject>)errorWithCode:(ORDAResultCode)code andProtocol:(Protocol *)protocol;
++ (ORDAErrorResult *)errorWithCode:(ORDAResultCode)code andProtocol:(Protocol *)protocol;
 - (id)initWithCode:(ORDAResultCode)code andProtocol:(Protocol *)protocol;
 
 @end

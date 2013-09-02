@@ -19,7 +19,6 @@
 
 @implementation ORDASQLiteTable {
 	id<ORDAStatement> tableInfoStatement, foreignKeyListStatement;
-	NSMutableDictionary * rows;
 }
 
 - (id)initWithGovernor:(id<ORDAGovernor>)governor withName:(NSString *)tableName
@@ -35,8 +34,6 @@
 	
 	tableInfoStatement = [self.governor createStatement:@"PRAGMA table_info(%@)", self.name].retain;
 	foreignKeyListStatement = [self.governor createStatement:@"PRAGMA foreign_key_list(%@)", self.name].retain;
-	
-	rows = [[NSMutableDictionary_NonRetaining_Zeroing dictionary] retain];
 	
 	return self;
 }
@@ -75,8 +72,8 @@
 
 - (id)selectWhereRowidEquals:(NSNumber *)rowid
 {
-	if (rows[rowid])
-		return rows[rowid];
+	if (self.rows[rowid])
+		return self.rows[rowid];
 	
 	id<ORDAStatement> stmt = [self.governor createStatement:@"SELECT * FROM [%@] WHERE rowid = '%@'", self.name, rowid];
 	if (stmt.isError)
@@ -88,7 +85,7 @@
 	if (result.rows < 1)
 		return nil;
 	
-	return rows[rowid] = [ORDASQLiteTableResultEntry tableResultEntryWithRowID:rowid andData:result[0] forTable:self];
+	return self.rows[rowid] = [ORDASQLiteTableResultEntry tableResultEntryWithRowID:rowid andData:result[0] forTable:self];
 }
 
 - (id<ORDATableResult>)selectWhere:(NSString *)format, ... NS_FORMAT_FUNCTION(1,2);
@@ -103,13 +100,13 @@
 		va_end(args);
 	}
 	
-	id<ORDAStatement> stmt = [self.governor createStatement:@"SELECT rowid as 'rowid' FROM %@ WHERE %@", self.name, clause];
+	id<ORDAStatement> stmt = [self.governor createStatement:@"SELECT rowid as 'rowid' FROM [%@] WHERE %@", self.name, clause];
 	if (stmt.isError)
-		return nil;
+		return (id<ORDATableResult>)stmt;
 	
 	id<ORDAStatementResult> result = stmt.result;
 	if (result.isError)
-		return nil;
+		return (id<ORDATableResult>)result;
 	
 	NSMutableArray * entries = [NSMutableArray arrayWithCapacity:result.rows];
 	for (NSNumber * rowid in result[@"rowid"])
@@ -124,15 +121,15 @@
 	for (NSString * column in self.columnNames)
 		[_values addObject:[NSString stringWithFormat:@"'%@'", [values valueForKey:column]]];
 	
-	id<ORDAStatement> stmt = [self.governor createStatement:@"INSERT INTO %@ VALUES (%@)", self.name, [_values componentsJoinedByString:@", "]];
+	id<ORDAStatement> stmt = [self.governor createStatement:@"INSERT INTO [%@] VALUES (%@)", self.name, [_values componentsJoinedByString:@", "]];
 	if (stmt.isError)
-		return nil;
+		return (id<ORDATableResult>)stmt;
 	
 	id<ORDAStatementResult> result = stmt.result;
 	if (result.isError)
-		return nil;
+		return (id<ORDATableResult>)result;
 	if (result.lastID < 0)
-		return nil;
+		return (id<ORDATableResult>)[ORDASQLiteErrorResult errorWithCode:(ORDACode)kORDANoResultRowsForKeyErrorResultCode];
 	
 	return [ORDATableResultImpl tableResultWithObject:[self selectWhereRowidEquals:@(result.lastID)]];
 }
@@ -151,29 +148,34 @@
 	
 	id<ORDAStatement> stmt = [self.governor createStatement:@"UPDATE %@ SET [%@] = '%@' WHERE %@", self.name, column, value, clause];
 	if (stmt.isError)
-		return nil;
+		return (id<ORDATableResult>)stmt;
 	
 	id<ORDAStatementResult> result = stmt.result;
 	if (result.isError)
-		return nil;
+		return (id<ORDATableResult>)result;
 	
 	return [self selectWhere:@"%@", clause];
 }
 
-- (void)updateDidOccur:(int)update toRowID:(NSNumber *)rowid
+- (id)keyForTableUpdate:(ORDATableUpdateType)type toRowWithKey:(id)key
 {
-	switch (update) {
-		case SQLITE_INSERT:
-			break;
-			
-		case SQLITE_UPDATE:
-			[(ORDASQLiteTableResultEntry *)rows[rowid] update];
-			break;
-			
-		case SQLITE_DELETE:
-			[rows removeObjectForKey:rowid];
-			break;
+	NSNumber * rowid = key;
+	
+	if (![rowid isKindOfClass:NSNumber.class]) {
+		id<ORDAStatement> stmt = [self.governor createStatement:@"SELECT rowid as 'rowid' FROM [%@] WHERE %@", self.name, key];
+		if (stmt.isError)
+			return stmt;
+		
+		id<ORDAStatementResult> result = stmt.result;
+		if (result.isError)
+			return result;
+		if (result.rows < 1)
+			return (id<ORDATableResult>)[ORDASQLiteErrorResult errorWithCode:(ORDACode)kORDANoResultRowsForKeyErrorResultCode];
+		
+		rowid = result[0][@"rowid"];
 	}
+	
+	return rowid;
 }
 
 @end

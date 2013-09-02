@@ -23,9 +23,26 @@
 
 @end
 
-void update_hook(ORDASQLiteGovernor * gov, int type, char const * dbname, char const * tbname, sqlite3_int64 rowid)
+void update_hook(void * data, int type, char const * dbname, char const * tbname, sqlite3_int64 rowid)
 {
-	[gov.tables[@(tbname)] updateDidOccur:type toRowID:@(rowid)];
+	ORDATableUpdateType ordaType = kORDAUnknownTableUpdateType;
+	switch (type) {
+		case SQLITE_INSERT:
+			ordaType = kORDARowInsertTableUpdateType;
+			break;
+			
+		case SQLITE_UPDATE:
+			ordaType = kORDARowUpdateTableUpdateType;
+			break;
+			
+		case SQLITE_DELETE:
+			ordaType = kORDARowDeleteTableUpdateType;
+			break;
+	}
+	
+	ORDASQLiteGovernor * gov = data;
+	
+	[gov.tables[@(tbname)] tableUpdateDidOccur:ordaType toRowWithKey:@(rowid)];
 }
 
 @implementation ORDASQLiteGovernor
@@ -51,6 +68,8 @@ void update_hook(ORDASQLiteGovernor * gov, int type, char const * dbname, char c
 	int status = sqlite3_open([path cStringUsingEncoding:NSUTF8StringEncoding], &_connection);
 	if (status != SQLITE_OK)
 		return (ORDASQLiteGovernor *)[ORDASQLiteErrorResult errorWithCode:(ORDACode)kORDAConnectionErrorResultCode andSQLiteErrorCode:status].retain;
+	
+	sqlite3_update_hook(self.connection, &update_hook, self);
 	
 	_tables = [[NSMutableDictionary dictionary] retain];
 	

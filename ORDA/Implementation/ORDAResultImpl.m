@@ -43,4 +43,9 @@
 	return [ORDA code:self.code matchesClass:kORDAResultCodeErrorClass];
 }
 
+- (NSString *)description
+{
+	return [NSString stringWithFormat:@"<Result: %@>", [ORDA descriptionForCode:self.code]];
+}
+
 @end

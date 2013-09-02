@@ -8,9 +8,11 @@
 
 #import "ORDAErrorResult.h"
 
+#import "ORDA.h"
+
 @implementation ORDAErrorResult
 
-+ (id<NSObject>)errorWithCode:(ORDAResultCode)code andProtocol:(Protocol *)protocol
++ (ORDAErrorResult *)errorWithCode:(ORDAResultCode)code andProtocol:(Protocol *)protocol
 {
 	return [[[self alloc] initWithCode:code andProtocol:protocol] autorelease];
 }

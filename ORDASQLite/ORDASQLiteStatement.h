@@ -8,7 +8,7 @@
 
 #import "ORDAStatementImpl.h"
 
-#import <sqlite3.h>
+#import "sqlite3.h"
 
 /**
  * ORDASQLiteStatement is the ORDA SQLite implementation of ORDAStatement.

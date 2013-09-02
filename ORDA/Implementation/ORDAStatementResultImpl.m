@@ -13,12 +13,12 @@
 
 @implementation ORDAStatementResultImpl
 
-+ (ORDAStatementResultImpl *)statementResultWithChanged:(int)changed andLastID:(long long)lastID andRows:(int)rows andColumns:(NSArray *)columns andDictionaryOfArrays:(NSDictionary *)dict andArrayOfDictionaries:(NSArray *)array
++ (ORDAStatementResultImpl *)statementResultWithChanged:(long long)changed andLastID:(long long)lastID andRows:(long)rows andColumns:(NSArray *)columns andDictionaryOfArrays:(NSDictionary *)dict andArrayOfDictionaries:(NSArray *)array
 {
 	return [[[ORDAStatementResultImpl alloc] initWithChanged:changed andLastID:lastID andRows:rows andColumns:columns andDictionaryOfArrays:dict andArrayOfDictionaries:array] autorelease];
 }
 
-- (id)initWithChanged:(int)changed andLastID:(long long)lastID andRows:(int)rows andColumns:(NSArray *)columns andDictionaryOfArrays:(NSDictionary *)dict andArrayOfDictionaries:(NSArray *)array
+- (id)initWithChanged:(long long)changed andLastID:(long long)lastID andRows:(long)rows andColumns:(NSArray *)columns andDictionaryOfArrays:(NSDictionary *)dict andArrayOfDictionaries:(NSArray *)array
 {
 	if (!(self = [super initWithSucessCode]))
 		return nil;
@@ -39,14 +39,14 @@
 	[super dealloc];
 }
 
-- (int)rows
+- (long)rows
 {
-	return (int)self.array.count;
+	return self.array.count;
 }
 
-- (int)columns
+- (long)columns
 {
-	return (int)self.dict.count;
+	return self.dict.count;
 }
 
 - (NSDictionary *)objectAtIndexedSubscript:(NSUInteger)idx

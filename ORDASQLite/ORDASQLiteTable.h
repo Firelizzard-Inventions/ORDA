@@ -13,6 +13,4 @@
  */
 @interface ORDASQLiteTable : ORDATableImpl
 
-- (void)updateDidOccur:(int)update toRowID:(NSNumber *)rowid;
-
 @end

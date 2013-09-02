@@ -36,6 +36,7 @@ typedef enum {
 	kORDANilDriverErrorResultCode,
 	kORDANoMemoryErrorResultCode,
 	kORDANilConnectionErrorResultCode,
+	kORDAUnknownErrorResultCode,
 	
 	kORDAInternalErrorResultCode = kORDAResultCodeInternalErrorSubclass,
 	kORDAUnimplementedAPIErrorResultCode,
@@ -53,6 +54,15 @@ typedef enum {
 	kORDABadBindIndexErrorResultCode,
 	
 	kORDATableErrorResultCode = kORDAResultCodeTableErrorClass,
-	kORDANilTableNameErrorResultCode
+	kORDANilTableNameErrorResultCode,
+	kORDANoResultRowsForKeyErrorResultCode,
+	kORDANoLastIDForInsertResultCode
 	
 } ORDAResultCode;
+
+typedef enum {
+	kORDARowInsertTableUpdateType,
+	kORDARowUpdateTableUpdateType,
+	kORDARowDeleteTableUpdateType,
+	kORDAUnknownTableUpdateType
+} ORDATableUpdateType;

@@ -13,14 +13,25 @@
 @protocol ORDAGovernor;
 
 /**
- * ORDATableImpl is a partial implementation of ORDATable.
+ * ORDATableImpl is a partial implementation of ORDATable. Subclasses of
+ * ORDATableImpl must insure that only instances conforming to
+ * ORDATableResutlEntry are added to the rows dictionary.
  */
 @interface ORDATableImpl : ORDAResultImpl <ORDATable>
 
 @property (readonly) NSString * name;
 @property (readonly) id<ORDAGovernor> governor;
+@property (readonly) NSMutableDictionary * rows;
 
 + (ORDATableImpl *)tableWithGovernor:(id<ORDAGovernor>)governor withName:(NSString *)tableName;
 - (id)initWithGovernor:(id<ORDAGovernor>)governor withName:(NSString *)tableName;
+
+- (id)keyForTableUpdate:(ORDATableUpdateType)type toRowWithKey:(id)key;
+
+@end
+
+@protocol ORDATableResultEntry <NSObject>
+
+- (void)update;
 
 @end

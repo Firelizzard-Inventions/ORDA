@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'ORDAMySQL' target in the 'ORDAMySQL' project
+//
+
+#ifdef __OBJC__
+	#import <Cocoa/Cocoa.h>
+#endif

@@ -15,6 +15,60 @@
 	NSMutableDictionary * _registeredDrivers;
 }
 
++ (NSString *)descriptionForCode:(ORDAResultCode)code
+{
+	switch (code) {
+		case kORDASucessResultCode:
+			return @"Success";
+			
+		case kORDAErrorResultCode:
+			return @"Error";
+		case kORDANilDriverErrorResultCode:
+			return @"Error - Driver is nil";
+		case kORDANoMemoryErrorResultCode:
+			return @"Error - Insufficient memory";
+		case kORDANilConnectionErrorResultCode:
+			return @"Error - Connection is nil";
+		case kORDAUnknownErrorResultCode:
+			return @"Error - Unknown";
+			
+		case kORDAInternalErrorResultCode:
+			return @"Internal Error";
+		case kORDAUnimplementedAPIErrorResultCode:
+			return @"Internal Error - Unimplemented API";
+		case kORDAInternalAPIMismatchErrorResultCode:
+			return @"Internal Error - API mismatch";
+			
+		case kORDAConnectionErrorResultCode:
+			return @"Connection Error";
+		case kORDANilURLErrorResultCode:
+			return @"Connection Error - URL is nil";
+		case kORDAMissingDriverErrorResultCode:
+			return @"Connection Error - No driver found for scheme";
+		case kORDABadURLErrorResultCode:
+			return @"Connection Error - Bad URL";
+			
+		case kORDAStatementErrorResultCode:
+			return @"Statement Error";
+		case kORDANilGovernorErrorResultCode:
+			return @"Statement Error - Governor is nil";
+		case kORDANilStatementSQLErrorResultCode:
+			return @"Statement Error - Statement SQL is nil";
+		case kORDABadStatementSQLErrorResultCode:
+			return @"Statement Error - Statement SQL is bad";
+		case kORDABadBindIndexErrorResultCode:
+			return @"Statement Error - Bind index is bad";
+			
+		case kORDATableErrorResultCode:
+			return @"Table Error";
+		case kORDANilTableNameErrorResultCode:
+			return @"Table Error - Name is nil";
+			
+		default:
+			return @"Bad result code";
+	}
+}
+
 + (BOOL)code:(ORDAResultCode)code matchesCode:(ORDACode)test withMask:(ORDAResultCodeMask)mask
 {
 	return (code & mask) == test;

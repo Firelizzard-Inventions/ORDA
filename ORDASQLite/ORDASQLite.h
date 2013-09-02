@@ -10,6 +10,16 @@
 
 /**
  * ORDASQLite is the only outward facing component of the ORDA SQLite driver.
+ *
+ * @name Updating Tables
+ * Tables are automatically updated by means of governors calling
+ * `sqlite3_update_hook(sqlite3*, void(*)(void *, int, char const *,
+ * char const *, sqlite3_int64), void*)`. However, if manual updating is desired
+ * (for instance, if another update hook is registered), `-[ORDATable
+ * tableUpdateDidOccur:forRowWithId:]` can be called. The key parameter to is to
+ * be either the ROWID or a complete WHERE clause (not including 'WHERE'), such
+ * as `MyPrimaryKeyRow = SomeKeyValue`, that can be used to retreive the correct
+ * ROWID.
  */
 @interface ORDASQLite : NSObject
 
@@ -19,7 +29,7 @@
 + (void)register;
 
 /**
- * @returns "sqlite", the ORDA SQLite URL scheme
+ * @return "sqlite", the ORDA SQLite URL scheme
  */
 + (NSString *)scheme;
 

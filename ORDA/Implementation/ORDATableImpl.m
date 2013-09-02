@@ -11,6 +11,7 @@
 //#import <TypeExtensions/NSObject+abstractProtocolConformer.h>
 #import "ORDAGovernor.h"
 #import "ORDAErrorResult.h"
+#import <TypeExtensions/NSMutableDictionary_NonRetaining_Zeroing.h>
 
 #pragma clang diagnostic ignored "-Wprotocol"
 @implementation ORDATableImpl
@@ -33,6 +34,7 @@
 	
 	_governor = governor.retain;
 	_name = tableName.retain;
+	_rows = [[NSMutableDictionary_NonRetaining_Zeroing dictionary] retain];
 	
 	return self;
 }
@@ -43,6 +45,35 @@
 	[_name release];
 	
 	[super dealloc];
+}
+
+- (id)keyForTableUpdate:(ORDATableUpdateType)type toRowWithKey:(id)key
+{
+	return key;
+}
+
+- (id<ORDAResult>)tableUpdateDidOccur:(ORDATableUpdateType)type toRowWithKey:(id)key
+{
+	key = [self keyForTableUpdate:type toRowWithKey:key];
+	
+	if ([key conformsToProtocol:@protocol(ORDAResult)])
+		if ([(id<ORDAResult>)key isError])
+			return (id<ORDAResult>)key;
+	
+	switch (type) {
+		case kORDARowUpdateTableUpdateType:
+			[(id<ORDATableResultEntry>)self.rows[key] update];
+			break;
+			
+		case kORDARowDeleteTableUpdateType:
+			[self.rows removeObjectForKey:key];
+			break;
+			
+		default:
+			break;
+	}
+	
+	return [ORDAErrorResult errorWithCode:kORDASucessResultCode andProtocol:nil];
 }
 
 @end
