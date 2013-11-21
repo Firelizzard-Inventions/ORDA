@@ -141,7 +141,7 @@
 	
 	id<ORDATableResult> result = [self.table updateSet:keyPath to:change[NSKeyValueChangeNewKey] where:@"rowid = '%@'", self.rowid];
 	if (result.isError)
-		return;
+		; // TODO do something with this error
 	
 	[lock unlock];
 }

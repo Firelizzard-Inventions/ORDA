@@ -49,16 +49,17 @@
 	if (result.isError)
 		STFail(@"Result error");
 	
-	NSLog(@"Changes: %d, Last ID: %lld, Rows: %d, columns: %d", result.changed, result.lastID, result.rows, result.columns);
+	NSLog(@"Changes: %lld, Last ID: %lld, Rows: %ld, columns: %ld", result.changed, result.lastID, result.rows, result.columns);
 	for (int i = 0; i < result.rows; i++)
 		NSLog(@"%@", result[i]);
 }
 
 - (void)testMetadata
 {
-	NSLog(@"%@", [governor columnNamesForTableName:@"Track"]);
-	NSLog(@"%@", [governor primaryKeyNamesForTableName:@"Track"]);
-	NSLog(@"%@", [governor foreignKeyTableNamesForTableName:@"Track"]);
+	id<ORDATable> track = [governor createTable:@"Track"];
+	NSLog(@"%@", [track columnNames]);
+	NSLog(@"%@", [track primaryKeyNames]);
+	NSLog(@"%@", [track foreignKeyTableNames]);
 }
 
 @end
