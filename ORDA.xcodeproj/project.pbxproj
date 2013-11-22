@@ -98,6 +98,13 @@
 			remoteGlobalIDString = 420D1A9C165BF5020097EE03;
 			remoteInfo = TypeExtensions;
 		};
+		42877CE9183E9DFB00967368 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4253CD6A17CAD4B000DB39B7 /* TypeExtensions.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 42877CC0183E8EA400967368;
+			remoteInfo = TypeExtensionsTests;
+		};
 		42A34E6017D455810093B85C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 42909B5B17B31A4700DBD505 /* Project object */;
@@ -185,7 +192,7 @@
 		42909B7317B31A4700DBD505 /* ORDA-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ORDA-Prefix.pch"; sourceTree = "<group>"; };
 		42909B7417B31A4700DBD505 /* ORDA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORDA.h; sourceTree = "<group>"; };
 		42909B7517B31A4700DBD505 /* ORDA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORDA.m; sourceTree = "<group>"; };
-		42909B7C17B31A4700DBD505 /* ORDATests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ORDATests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42909B7C17B31A4700DBD505 /* ORDASQLiteTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ORDASQLiteTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42909B7D17B31A4700DBD505 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		42909B8517B31A4700DBD505 /* ORDATests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ORDATests-Info.plist"; sourceTree = "<group>"; };
 		42909B8717B31A4700DBD505 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -316,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				4253CD6F17CAD4B000DB39B7 /* TypeExtensions.framework */,
+				42877CEA183E9DFB00967368 /* TypeExtensionsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -340,7 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				42909B6417B31A4700DBD505 /* ORDA.framework */,
-				42909B7C17B31A4700DBD505 /* ORDATests.octest */,
+				42909B7C17B31A4700DBD505 /* ORDASQLiteTests.octest */,
 				42B00BD217C66C72000B13E7 /* ORDASQLite.framework */,
 				42105FEB17CFFA4E00FC92BB /* ORDAMySQL.framework */,
 			);
@@ -591,9 +599,9 @@
 			productReference = 42909B6417B31A4700DBD505 /* ORDA.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		42909B7B17B31A4700DBD505 /* ORDATests */ = {
+		42909B7B17B31A4700DBD505 /* ORDASQLiteTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 42909B9117B31A4700DBD505 /* Build configuration list for PBXNativeTarget "ORDATests" */;
+			buildConfigurationList = 42909B9117B31A4700DBD505 /* Build configuration list for PBXNativeTarget "ORDASQLiteTests" */;
 			buildPhases = (
 				42909B7717B31A4700DBD505 /* Sources */,
 				42909B7817B31A4700DBD505 /* Frameworks */,
@@ -606,9 +614,9 @@
 			dependencies = (
 				42B00C2A17C6C3AC000B13E7 /* PBXTargetDependency */,
 			);
-			name = ORDATests;
+			name = ORDASQLiteTests;
 			productName = ORDATests;
-			productReference = 42909B7C17B31A4700DBD505 /* ORDATests.octest */;
+			productReference = 42909B7C17B31A4700DBD505 /* ORDASQLiteTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 		42B00BD117C66C72000B13E7 /* ORDASQLite */ = {
@@ -659,7 +667,7 @@
 			targets = (
 				42909B6317B31A4700DBD505 /* ORDA */,
 				42B00BD117C66C72000B13E7 /* ORDASQLite */,
-				42909B7B17B31A4700DBD505 /* ORDATests */,
+				42909B7B17B31A4700DBD505 /* ORDASQLiteTests */,
 				42105FEA17CFFA4E00FC92BB /* ORDAMySQL */,
 			);
 		};
@@ -671,6 +679,13 @@
 			fileType = wrapper.framework;
 			path = TypeExtensions.framework;
 			remoteRef = 4253CD6E17CAD4B000DB39B7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		42877CEA183E9DFB00967368 /* TypeExtensionsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = TypeExtensionsTests.xctest;
+			remoteRef = 42877CE9183E9DFB00967368 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1092,7 +1107,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		42909B9117B31A4700DBD505 /* Build configuration list for PBXNativeTarget "ORDATests" */ = {
+		42909B9117B31A4700DBD505 /* Build configuration list for PBXNativeTarget "ORDASQLiteTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				42909B9217B31A4700DBD505 /* Debug */,

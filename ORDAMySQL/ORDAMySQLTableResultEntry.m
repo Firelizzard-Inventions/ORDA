@@ -38,7 +38,7 @@
 	_locks = [[NSDictionary alloc] initWithObjects:locks forKeys:keys count:cnt];
 	
 	for (id key in _backing)
-		[self addObserver:self forKeyPath:[key description] options:0 context:nil];
+		[self addObserver:self forKeyPath:[key description] options:NSKeyValueObservingOptionNew context:nil];
 	
 	return self;
 }

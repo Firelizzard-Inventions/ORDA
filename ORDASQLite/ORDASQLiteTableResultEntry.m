@@ -41,7 +41,7 @@
 	_locks = [[NSDictionary alloc] initWithObjects:locks forKeys:keys count:cnt];
 	
 	for (id key in _backing)
-		[self addObserver:self forKeyPath:[key description] options:0 context:nil];
+		[self addObserver:self forKeyPath:[key description] options:NSKeyValueObservingOptionNew context:nil];
 	
 	return self;
 }
@@ -57,14 +57,16 @@
 	_rowid = rowid.retain;
 	_table = table.retain;
 	
-	[self addObserver:self forKeyPath:@"rowid" options:0 context:nil];
+	[self addObserver:self forKeyPath:@"rowid" options:NSKeyValueObservingOptionNew context:nil];
 	
 	return self;
 }
 
 - (void)dealloc
 {
-	[self removeObserver:self forKeyPath:@"rowid" context:nil];
+	if (_rowid)
+		[self removeObserver:self forKeyPath:@"rowid" context:nil];
+	
 	for (id key in _backing)
 		[self removeObserver:self forKeyPath:[key description] context:nil];
 	
