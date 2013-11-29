@@ -55,7 +55,7 @@
  */
 
 /**
- * Selects from the table
+ * Selects rows from the table
  * @param format the format string for the where clause
  * @param ... the format string arguments
  * @return the selected rows
@@ -68,13 +68,13 @@
 /**
  * Inserts values into the table
  * @param values an object containing the values
+ * @param ignoreCase whether or not to ignore the case of the column names
  * @return the inserted row
  * @discussion This method performs 'INSERT INTO <tableName> VALUES (<values>)'
  * and then returns the result of 'SELECT * FROM <tableName> WHERE {primary key}
  * = <lastID>'. The values are retrieved using -[NSObject valueForKey:].
- * @warning There is currently no way to insert only some columns.
  */
-- (id<ORDATableResult>)insertValues:(id)values;
+- (id<ORDATableResult>)insertValues:(id)values ignoreCase:(BOOL)ignoreCase;
 
 /**
  * Updates a row in the table
@@ -86,8 +86,20 @@
  * @discussion This method runs 'UPDATE <tableName> SET <column> = <value> WHERE
  * <whereClause>' and then returns the result of 'SELECT * FROM <tableName>
  * WHERE <whereClause>'.
+ * @see +[NSString stringWithFormat:]
  */
-- (id<ORDATableResult>)updateSet:(NSString *)column to:(id)value where:(NSString *)format, ... NS_FORMAT_FUNCTION(1,4);
+- (id<ORDATableResult>)updateSet:(NSString *)column to:(id)value where:(NSString *)format, ... NS_FORMAT_FUNCTION(3,4);
+
+/**
+ * Deletes from the table
+ * @param format the format string for the where clause
+ * @param ... the format string arguments
+ * @return the statement result
+ * @discussion THis method runs 'DELETE FROM <tableName> WHERE <whereClause>' on
+ * the table and returns the number of rows deleted.
+ * @see +[NSString stringWithFormat:]
+ */
+- (id<ORDAStatementResult>)deleteWhere:(NSString *)format, ... NS_FORMAT_FUNCTION(1,2);
 
 /** ----------------------------------------------------------------------------
  * @name Updating Row Entities

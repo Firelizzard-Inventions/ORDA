@@ -19,7 +19,7 @@
 
 + (ORDATableResultImpl *)tableResultWithObject:(id)obj
 {
-	return [self tableResultWithArray:[NSArray arrayWithObject:obj]];
+	return [self tableResultWithArray:@[obj]];
 }
 
 - (id)initWithArray:(NSArray *)array
@@ -47,6 +47,11 @@
 - (id)objectAtIndexedSubscript:(NSUInteger)idx
 {
 	return _backing[idx];
+}
+
+- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(id [])buffer count:(NSUInteger)len
+{
+	return [_backing countByEnumeratingWithState:state objects:buffer count:len];
 }
 
 @end

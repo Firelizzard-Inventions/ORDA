@@ -14,7 +14,7 @@
  * The ORDATableResult protocol is the protocol that all results from ORDATable
  * must conform to.
  */
-@protocol ORDATableResult <ORDAResult>
+@protocol ORDATableResult <ORDAResult, NSFastEnumeration>
 
 /**
  * @return the number of contained result rows
@@ -26,5 +26,7 @@
  * @return the idx'th result row contained in this result object/array.
  */
 - (id)objectAtIndexedSubscript:(NSUInteger)idx;
+
+
 
 @end

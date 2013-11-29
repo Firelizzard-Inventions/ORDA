@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Firelizzard Inventions. Some rights reserved, see license.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface ORDATests : SenTestCase
+@interface ORDATests : XCTestCase
 
 @end

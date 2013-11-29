@@ -29,7 +29,7 @@
 	
 	governor = [[ORDA sharedInstance] governorForURL:URL].retain;
 	if (governor.isError)
-		STFail(@"Governor error");
+		XCTFail(@"Governor error");
 }
 
 - (void)tearDown
@@ -43,11 +43,11 @@
 {
 	id<ORDAStatement> statement = [governor createStatement:@"SELECT * FROM Track LIMIT 10"];
 	if (statement.isError)
-		STFail(@"Statement error");
+		XCTFail(@"Statement error");
 	
 	id<ORDAStatementResult> result = statement.result;
 	if (result.isError)
-		STFail(@"Result error");
+		XCTFail(@"Result error");
 	
 	NSLog(@"Changes: %lld, Last ID: %lld, Rows: %ld, columns: %ld", result.changed, result.lastID, result.rows, result.columns);
 	for (int i = 0; i < result.rows; i++)

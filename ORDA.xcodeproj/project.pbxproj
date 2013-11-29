@@ -31,7 +31,6 @@
 		42719C8F17C9BF63007AAB83 /* ORDATableResultImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 42719C8D17C9BF63007AAB83 /* ORDATableResultImpl.m */; };
 		42909B6817B31A4700DBD505 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42909B6717B31A4700DBD505 /* Cocoa.framework */; };
 		42909B7217B31A4700DBD505 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42909B7017B31A4700DBD505 /* InfoPlist.strings */; };
-		42909B7E17B31A4700DBD505 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42909B7D17B31A4700DBD505 /* SenTestingKit.framework */; };
 		42909B7F17B31A4700DBD505 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42909B6717B31A4700DBD505 /* Cocoa.framework */; };
 		42909B8217B31A4700DBD505 /* ORDA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42909B6417B31A4700DBD505 /* ORDA.framework */; };
 		42909B8817B31A4700DBD505 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42909B8617B31A4700DBD505 /* InfoPlist.strings */; };
@@ -86,6 +85,7 @@
 		42B00C3317C6C65D000B13E7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 42B00C2D17C6C54D000B13E7 /* README.md */; };
 		42B00C3517C6C66A000B13E7 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 42B00C3417C6C669000B13E7 /* LICENSE */; };
 		42B00C3617C6C66A000B13E7 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 42B00C3417C6C669000B13E7 /* LICENSE */; };
+		42EC295E1840476A00AA5BDA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42EC295D1840476A00AA5BDA /* XCTest.framework */; };
 		42F06AF217B8786A004F2F06 /* ORDADriver.h in Headers */ = {isa = PBXBuildFile; fileRef = 42F06AC817B8627D004F2F06 /* ORDADriver.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		42F06AFB17B87872004F2F06 /* ORDA.h in Headers */ = {isa = PBXBuildFile; fileRef = 42909B7417B31A4700DBD505 /* ORDA.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -192,8 +192,7 @@
 		42909B7317B31A4700DBD505 /* ORDA-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ORDA-Prefix.pch"; sourceTree = "<group>"; };
 		42909B7417B31A4700DBD505 /* ORDA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORDA.h; sourceTree = "<group>"; };
 		42909B7517B31A4700DBD505 /* ORDA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORDA.m; sourceTree = "<group>"; };
-		42909B7C17B31A4700DBD505 /* ORDASQLiteTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ORDASQLiteTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		42909B7D17B31A4700DBD505 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		42909B7C17B31A4700DBD505 /* ORDASQLiteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ORDASQLiteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42909B8517B31A4700DBD505 /* ORDATests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ORDATests-Info.plist"; sourceTree = "<group>"; };
 		42909B8717B31A4700DBD505 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		42909B8917B31A4700DBD505 /* ORDATests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORDATests.h; sourceTree = "<group>"; };
@@ -236,6 +235,7 @@
 		42B00BFC17C66D38000B13E7 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		42B00C2D17C6C54D000B13E7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		42B00C3417C6C669000B13E7 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		42EC295D1840476A00AA5BDA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		42F06AC817B8627D004F2F06 /* ORDADriver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ORDADriver.h; path = Specification/ORDADriver.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -264,9 +264,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42EC295E1840476A00AA5BDA /* XCTest.framework in Frameworks */,
 				42B00C1C17C6BA6E000B13E7 /* libsqlite3.0.dylib in Frameworks */,
 				42B00C1B17C6BA66000B13E7 /* ORDASQLite.framework in Frameworks */,
-				42909B7E17B31A4700DBD505 /* SenTestingKit.framework in Frameworks */,
 				42909B7F17B31A4700DBD505 /* Cocoa.framework in Frameworks */,
 				42909B8217B31A4700DBD505 /* ORDA.framework in Frameworks */,
 			);
@@ -348,7 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				42909B6417B31A4700DBD505 /* ORDA.framework */,
-				42909B7C17B31A4700DBD505 /* ORDASQLiteTests.octest */,
+				42909B7C17B31A4700DBD505 /* ORDASQLiteTests.xctest */,
 				42B00BD217C66C72000B13E7 /* ORDASQLite.framework */,
 				42105FEB17CFFA4E00FC92BB /* ORDAMySQL.framework */,
 			);
@@ -358,8 +358,8 @@
 		42909B6617B31A4700DBD505 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				42EC295D1840476A00AA5BDA /* XCTest.framework */,
 				42909B6717B31A4700DBD505 /* Cocoa.framework */,
-				42909B7D17B31A4700DBD505 /* SenTestingKit.framework */,
 				42B00AE417C337D9000B13E7 /* Foundation.framework */,
 				42909B6917B31A4700DBD505 /* Other Frameworks */,
 			);
@@ -616,8 +616,8 @@
 			);
 			name = ORDASQLiteTests;
 			productName = ORDATests;
-			productReference = 42909B7C17B31A4700DBD505 /* ORDASQLiteTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = 42909B7C17B31A4700DBD505 /* ORDASQLiteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		42B00BD117C66C72000B13E7 /* ORDASQLite */ = {
 			isa = PBXNativeTarget;
@@ -877,7 +877,6 @@
 		42105FF817CFFA4E00FC92BB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -897,7 +896,6 @@
 		42105FF917CFFA4E00FC92BB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1008,15 +1006,16 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-					"\"$(SRCROOT)/../CORM/DerivedData/CORM/Build/Products/Debug\"",
+					"\\\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\\\"",
+					"\\\"$(SRCROOT)/../CORM/DerivedData/CORM/Build/Products/Debug\\\"",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ORDA/ORDA-Prefix.pch";
 				INFOPLIST_FILE = "ORDATests/ORDATests-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -1025,22 +1024,22 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-					"\"$(SRCROOT)/../CORM/DerivedData/CORM/Build/Products/Debug\"",
+					"\\\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\\\"",
+					"\\\"$(SRCROOT)/../CORM/DerivedData/CORM/Build/Products/Debug\\\"",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ORDA/ORDA-Prefix.pch";
 				INFOPLIST_FILE = "ORDATests/ORDATests-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
 		42B00BDF17C66C72000B13E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1060,7 +1059,6 @@
 		42B00BE017C66C72000B13E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;

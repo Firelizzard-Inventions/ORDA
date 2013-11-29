@@ -8,6 +8,8 @@
 
 #import "ORDASQLiteTableResultEntry.h"
 
+#import <TypeExtensions/TypeExtensions.h>
+
 #import "ORDAGovernor.h"
 #import "ORDAStatement.h"
 #import "ORDAStatementResult.h"
@@ -78,11 +80,6 @@
 	[super dealloc];
 }
 
-- (NSArray *)exposedBindings
-{
-	return _backing.allKeys;
-}
-
 - (NSUInteger)count
 {
 	return _backing.count;
@@ -90,7 +87,7 @@
 
 - (id)objectForKey:(id)aKey
 {
-	return [_backing objectForKey:aKey];
+	return _backing[aKey];
 }
 
 - (NSEnumerator *)keyEnumerator
@@ -100,7 +97,7 @@
 
 - (void)setObject:(id)anObject forKey:(id<NSCopying>)aKey
 {
-	[_backing setObject:anObject forKey:aKey];
+	_backing[aKey] = anObject;
 }
 
 - (void)removeObjectForKey:(id)aKey
@@ -139,6 +136,9 @@
 	
 	NSLock * lock = _locks[keyPath];
 	if (![lock tryLock])
+		return;
+	
+	if ([@"rowid" isEqualToString:keyPath] && [change[NSKeyValueChangeNewKey] isNull])
 		return;
 	
 	id<ORDATableResult> result = [self.table updateSet:keyPath to:change[NSKeyValueChangeNewKey] where:@"rowid = '%@'", self.rowid];
