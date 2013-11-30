@@ -1,7 +1,0 @@
-//
-// Prefix header for all source files of the 'ORDASQLite' target in the 'ORDASQLite' project
-//
-
-#ifdef __OBJC__
-	#import <Cocoa/Cocoa.h>
-#endif
