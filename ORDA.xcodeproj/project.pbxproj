@@ -16,28 +16,28 @@
 		428D036018495FB500303ED4 /* ORDATable.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D035718495FB500303ED4 /* ORDATable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		428D036118495FB500303ED4 /* ORDATableResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D035818495FB500303ED4 /* ORDATableResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		428D036218495FB500303ED4 /* ORDATableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D035918495FB500303ED4 /* ORDATableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		428D037318495FC500303ED4 /* ORDADriverResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D036318495FC500303ED4 /* ORDADriverResult.h */; };
+		428D037318495FC500303ED4 /* ORDADriverResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D036318495FC500303ED4 /* ORDADriverResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		428D037418495FC500303ED4 /* ORDADriverResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 428D036418495FC500303ED4 /* ORDADriverResult.m */; };
-		428D037518495FC500303ED4 /* ORDAErrorResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D036518495FC500303ED4 /* ORDAErrorResult.h */; };
+		428D037518495FC500303ED4 /* ORDAErrorResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D036518495FC500303ED4 /* ORDAErrorResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		428D037618495FC500303ED4 /* ORDAErrorResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 428D036618495FC500303ED4 /* ORDAErrorResult.m */; };
-		428D037718495FC500303ED4 /* ORDAGovernorImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D036718495FC500303ED4 /* ORDAGovernorImpl.h */; };
+		428D037718495FC500303ED4 /* ORDAGovernorImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D036718495FC500303ED4 /* ORDAGovernorImpl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		428D037818495FC500303ED4 /* ORDAGovernorImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 428D036818495FC500303ED4 /* ORDAGovernorImpl.m */; };
-		428D037918495FC500303ED4 /* ORDAResultImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D036918495FC500303ED4 /* ORDAResultImpl.h */; };
+		428D037918495FC500303ED4 /* ORDAResultImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D036918495FC500303ED4 /* ORDAResultImpl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		428D037A18495FC500303ED4 /* ORDAResultImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 428D036A18495FC500303ED4 /* ORDAResultImpl.m */; };
-		428D037B18495FC500303ED4 /* ORDAStatementImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D036B18495FC500303ED4 /* ORDAStatementImpl.h */; };
+		428D037B18495FC500303ED4 /* ORDAStatementImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D036B18495FC500303ED4 /* ORDAStatementImpl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		428D037C18495FC500303ED4 /* ORDAStatementImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 428D036C18495FC500303ED4 /* ORDAStatementImpl.m */; };
-		428D037D18495FC500303ED4 /* ORDAStatementResultImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D036D18495FC500303ED4 /* ORDAStatementResultImpl.h */; };
+		428D037D18495FC500303ED4 /* ORDAStatementResultImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D036D18495FC500303ED4 /* ORDAStatementResultImpl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		428D037E18495FC500303ED4 /* ORDAStatementResultImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 428D036E18495FC500303ED4 /* ORDAStatementResultImpl.m */; };
-		428D037F18495FC500303ED4 /* ORDATableImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D036F18495FC500303ED4 /* ORDATableImpl.h */; };
+		428D037F18495FC500303ED4 /* ORDATableImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D036F18495FC500303ED4 /* ORDATableImpl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		428D038018495FC500303ED4 /* ORDATableImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 428D037018495FC500303ED4 /* ORDATableImpl.m */; };
-		428D038118495FC500303ED4 /* ORDATableResultImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D037118495FC500303ED4 /* ORDATableResultImpl.h */; };
+		428D038118495FC500303ED4 /* ORDATableResultImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D037118495FC500303ED4 /* ORDATableResultImpl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		428D038218495FC500303ED4 /* ORDATableResultImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 428D037218495FC500303ED4 /* ORDATableResultImpl.m */; };
-		428D03851849606900303ED4 /* ORDATableViewImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D03831849606900303ED4 /* ORDATableViewImpl.h */; };
+		428D03851849606900303ED4 /* ORDATableViewImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D03831849606900303ED4 /* ORDATableViewImpl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		428D03861849606900303ED4 /* ORDATableViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 428D03841849606900303ED4 /* ORDATableViewImpl.m */; };
-		428D038B1849860F00303ED4 /* ORDA+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 424B2E7217C71CF1000B354E /* ORDA+Private.h */; };
+		428D038B1849860F00303ED4 /* ORDA+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 424B2E7217C71CF1000B354E /* ORDA+Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		42909B6817B31A4700DBD505 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42909B6717B31A4700DBD505 /* Cocoa.framework */; };
 		42909B7217B31A4700DBD505 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42909B7017B31A4700DBD505 /* InfoPlist.strings */; };
-		4290F0751849920A00C67769 /* ORDA-dev.h in Headers */ = {isa = PBXBuildFile; fileRef = 4290F0741849920A00C67769 /* ORDA-dev.h */; };
+		4290F0751849920A00C67769 /* ORDA-dev.h in Headers */ = {isa = PBXBuildFile; fileRef = 4290F0741849920A00C67769 /* ORDA-dev.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		42B00AF617C3402F000B13E7 /* Chinook_Sqlite.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 42B00AF517C3402F000B13E7 /* Chinook_Sqlite.sqlite */; };
 		42B00B2417C53A9F000B13E7 /* ORDA.m in Sources */ = {isa = PBXBuildFile; fileRef = 42909B7517B31A4700DBD505 /* ORDA.m */; };
 		42B00C3317C6C65D000B13E7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 42B00C2D17C6C54D000B13E7 /* README.md */; };
@@ -316,7 +316,6 @@
 			files = (
 				42F06AFB17B87872004F2F06 /* ORDA.h in Headers */,
 				428D035A18495FB500303ED4 /* ORDADriver.h in Headers */,
-				4290F0751849920A00C67769 /* ORDA-dev.h in Headers */,
 				428D035B18495FB500303ED4 /* ORDAGovernor.h in Headers */,
 				428D035C18495FB500303ED4 /* ORDAResult.h in Headers */,
 				428D035D18495FB500303ED4 /* ORDAResultConsts.h in Headers */,
@@ -324,7 +323,7 @@
 				428D035F18495FB500303ED4 /* ORDAStatementResult.h in Headers */,
 				428D036018495FB500303ED4 /* ORDATable.h in Headers */,
 				428D036118495FB500303ED4 /* ORDATableResult.h in Headers */,
-				428D036218495FB500303ED4 /* ORDATableView.h in Headers */,
+				4290F0751849920A00C67769 /* ORDA-dev.h in Headers */,
 				428D038B1849860F00303ED4 /* ORDA+Private.h in Headers */,
 				428D037918495FC500303ED4 /* ORDAResultImpl.h in Headers */,
 				428D038118495FC500303ED4 /* ORDATableResultImpl.h in Headers */,
@@ -335,6 +334,7 @@
 				428D037318495FC500303ED4 /* ORDADriverResult.h in Headers */,
 				428D037D18495FC500303ED4 /* ORDAStatementResultImpl.h in Headers */,
 				428D037518495FC500303ED4 /* ORDAErrorResult.h in Headers */,
+				428D036218495FB500303ED4 /* ORDATableView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
