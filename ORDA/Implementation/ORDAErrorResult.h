@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Firelizzard Inventions. Some rights reserved, see license.
 //
 
-#import <TypeExtensions/NSObject_ProtocolConformer.h>
+#import <TypeExtensions/TypeExtensions.h>
 
 #import "ORDAResult.h"
 
