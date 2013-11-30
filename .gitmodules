@@ -1,0 +1,3 @@
+[submodule "Include/TypeExtensions"]
+	path = Include/TypeExtensions
+	url = git@github.com:Firelizzard-Inventions/TypeExtensions.git

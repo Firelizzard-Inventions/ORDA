@@ -37,7 +37,6 @@
 		428D038B1849860F00303ED4 /* ORDA+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 424B2E7217C71CF1000B354E /* ORDA+Private.h */; };
 		42909B6817B31A4700DBD505 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42909B6717B31A4700DBD505 /* Cocoa.framework */; };
 		42909B7217B31A4700DBD505 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42909B7017B31A4700DBD505 /* InfoPlist.strings */; };
-		4290EF7318498C4400C67769 /* TypeExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4290EF7218498C4400C67769 /* TypeExtensions.framework */; };
 		4290F0751849920A00C67769 /* ORDA-dev.h in Headers */ = {isa = PBXBuildFile; fileRef = 4290F0741849920A00C67769 /* ORDA-dev.h */; };
 		42B00AF617C3402F000B13E7 /* Chinook_Sqlite.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 42B00AF517C3402F000B13E7 /* Chinook_Sqlite.sqlite */; };
 		42B00B2417C53A9F000B13E7 /* ORDA.m in Sources */ = {isa = PBXBuildFile; fileRef = 42909B7517B31A4700DBD505 /* ORDA.m */; };
@@ -57,6 +56,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 42909B6317B31A4700DBD505;
 			remoteInfo = ORDA;
+		};
+		42D1904B1849B0AE002EC23A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42D190461849B0AD002EC23A /* TypeExtensions.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 420D1A9C165BF5020097EE03;
+			remoteInfo = TypeExtensions;
+		};
+		42D1904D1849B0AE002EC23A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42D190461849B0AD002EC23A /* TypeExtensions.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 42026AD2183EA04800B1F530;
+			remoteInfo = TypeExtensionsTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -99,9 +112,7 @@
 		42909B7317B31A4700DBD505 /* ORDA-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ORDA-Prefix.pch"; sourceTree = "<group>"; };
 		42909B7417B31A4700DBD505 /* ORDA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORDA.h; sourceTree = "<group>"; };
 		42909B7517B31A4700DBD505 /* ORDA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORDA.m; sourceTree = "<group>"; };
-		4290EF7218498C4400C67769 /* TypeExtensions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TypeExtensions.framework; path = "../~/DerivedData/Build/Products/Debug/TypeExtensions.framework"; sourceTree = "<group>"; };
 		4290F0741849920A00C67769 /* ORDA-dev.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ORDA-dev.h"; sourceTree = "<group>"; };
-		42B00AE417C337D9000B13E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		42B00AF517C3402F000B13E7 /* Chinook_Sqlite.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinook_Sqlite.sqlite; sourceTree = "<group>"; };
 		42B00BFC17C66D38000B13E7 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		42B00C2D17C6C54D000B13E7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
@@ -112,6 +123,7 @@
 		42D190321849A42E002EC23A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		42D190361849A42E002EC23A /* ORDATests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ORDATests-Prefix.pch"; sourceTree = "<group>"; };
 		42D1903C1849A442002EC23A /* ORDATests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORDATests.m; sourceTree = "<group>"; };
+		42D190461849B0AD002EC23A /* TypeExtensions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TypeExtensions.xcodeproj; path = Include/TypeExtensions/TypeExtensions.xcodeproj; sourceTree = "<group>"; };
 		42EC295D1840476A00AA5BDA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
@@ -120,7 +132,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4290EF7318498C4400C67769 /* TypeExtensions.framework in Frameworks */,
 				42909B6817B31A4700DBD505 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,9 +150,7 @@
 		42909B5A17B31A4700DBD505 = {
 			isa = PBXGroup;
 			children = (
-				42D190261849A40F002EC23A /* .travis.yml */,
-				42B00C3417C6C669000B13E7 /* LICENSE */,
-				42B00C2D17C6C54D000B13E7 /* README.md */,
+				42D1904F1849B0C1002EC23A /* Other */,
 				42909B6D17B31A4700DBD505 /* ORDA */,
 				42D1902E1849A42E002EC23A /* ORDATests */,
 				42F06AFE17B878A9004F2F06 /* Libraries */,
@@ -162,10 +171,8 @@
 		42909B6617B31A4700DBD505 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4290EF7218498C4400C67769 /* TypeExtensions.framework */,
 				42EC295D1840476A00AA5BDA /* XCTest.framework */,
 				42909B6717B31A4700DBD505 /* Cocoa.framework */,
-				42B00AE417C337D9000B13E7 /* Foundation.framework */,
 				42909B6917B31A4700DBD505 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -223,6 +230,26 @@
 				42D190361849A42E002EC23A /* ORDATests-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		42D190471849B0AD002EC23A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				42D1904C1849B0AE002EC23A /* TypeExtensions.framework */,
+				42D1904E1849B0AE002EC23A /* TypeExtensionsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		42D1904F1849B0C1002EC23A /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				42D190261849A40F002EC23A /* .travis.yml */,
+				42B00C3417C6C669000B13E7 /* LICENSE */,
+				42B00C2D17C6C54D000B13E7 /* README.md */,
+				42D190461849B0AD002EC23A /* TypeExtensions.xcodeproj */,
+			);
+			name = Other;
 			sourceTree = "<group>";
 		};
 		42F06AAC17B84ADC004F2F06 /* Implementation */ = {
@@ -368,6 +395,12 @@
 			mainGroup = 42909B5A17B31A4700DBD505;
 			productRefGroup = 42909B6517B31A4700DBD505 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 42D190471849B0AD002EC23A /* Products */;
+					ProjectRef = 42D190461849B0AD002EC23A /* TypeExtensions.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				42909B6317B31A4700DBD505 /* ORDA */,
@@ -375,6 +408,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		42D1904C1849B0AE002EC23A /* TypeExtensions.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = TypeExtensions.framework;
+			remoteRef = 42D1904B1849B0AE002EC23A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		42D1904E1849B0AE002EC23A /* TypeExtensionsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = TypeExtensionsTests.xctest;
+			remoteRef = 42D1904D1849B0AE002EC23A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		42909B6217B31A4700DBD505 /* Resources */ = {
