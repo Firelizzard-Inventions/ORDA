@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		426CA2FB1849EF2900212CF3 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 426CA2FA1849EF2900212CF3 /* Makefile */; };
 		428D035A18495FB500303ED4 /* ORDADriver.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D035118495FB500303ED4 /* ORDADriver.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		428D035B18495FB500303ED4 /* ORDAGovernor.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D035218495FB500303ED4 /* ORDAGovernor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		428D035C18495FB500303ED4 /* ORDAResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D035318495FB500303ED4 /* ORDAResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -78,6 +79,7 @@
 
 /* Begin PBXFileReference section */
 		424B2E7217C71CF1000B354E /* ORDA+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ORDA+Private.h"; sourceTree = "<group>"; };
+		426CA2FA1849EF2900212CF3 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		428D035118495FB500303ED4 /* ORDADriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORDADriver.h; sourceTree = "<group>"; };
 		428D035218495FB500303ED4 /* ORDAGovernor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORDAGovernor.h; sourceTree = "<group>"; };
 		428D035318495FB500303ED4 /* ORDAResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORDAResult.h; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				42D190261849A40F002EC23A /* .travis.yml */,
 				42B00C3417C6C669000B13E7 /* LICENSE */,
 				42B00C2D17C6C54D000B13E7 /* README.md */,
+				426CA2FA1849EF2900212CF3 /* Makefile */,
 				42D190461849B0AD002EC23A /* TypeExtensions.xcodeproj */,
 			);
 			name = Other;
@@ -463,6 +466,7 @@
 				428D037418495FC500303ED4 /* ORDADriverResult.m in Sources */,
 				428D037618495FC500303ED4 /* ORDAErrorResult.m in Sources */,
 				428D038218495FC500303ED4 /* ORDATableResultImpl.m in Sources */,
+				426CA2FB1849EF2900212CF3 /* Makefile in Sources */,
 				428D03861849606900303ED4 /* ORDATableViewImpl.m in Sources */,
 				428D038018495FC500303ED4 /* ORDATableImpl.m in Sources */,
 				428D037E18495FC500303ED4 /* ORDAStatementResultImpl.m in Sources */,
