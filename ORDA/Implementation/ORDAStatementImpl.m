@@ -8,11 +8,10 @@
 
 #import "ORDAStatementImpl.h"
 
-//#import <TypeExtensions/NSObject+abstractProtocolConformer.h>
 #import "ORDAGovernor.h"
 #import "ORDAErrorResult.h"
 
-#pragma clang diagnostic ignored "-Wprotocol"
+SUPPRESS(-Wprotocol)
 @implementation ORDAStatementImpl
 
 + (ORDAStatementImpl *)statementWithGovernor:(id<ORDAGovernor>)governor withSQL:(NSString *)SQL

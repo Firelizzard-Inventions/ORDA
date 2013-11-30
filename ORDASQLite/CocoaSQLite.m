@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 Firelizzard Inventions. Some rights reserved, see license.
 //
 
-#import "ORDASQLite.h"
+#import "CocoaSQLite.h"
 
 #import "ORDASQLiteDriver.h"
 
-@implementation ORDASQLite
+@implementation CocoaSQLite
 
 + (void)register
 {

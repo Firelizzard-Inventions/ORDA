@@ -16,6 +16,7 @@
 #import "ORDAStatementResult.h"
 #import "ORDATable.h"
 #import "ORDATableResult.h"
+#import "ORDATableView.h"
 
 /**
  * The goal of the Objective Relational Database Abstraction is to provide a

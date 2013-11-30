@@ -8,10 +8,13 @@
 
 #import "ORDASQLiteStatement.h"
 
+#import <TypeExtensions/TypeExtensions.h>
+#import <ORDA/ORDA.h>
+
+#import "ORDAStatementResultImpl.h"
+
 #import "ORDASQLiteGovernor.h"
 #import "ORDASQLiteErrorResult.h"
-#import "ORDAStatementResultImpl.h"
-#import <TypeExtensions/NSString+orNull.h>
 
 @implementation ORDASQLiteStatement {
 	id<ORDAStatementResult> _result;

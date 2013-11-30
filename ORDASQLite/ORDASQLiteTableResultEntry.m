@@ -9,12 +9,8 @@
 #import "ORDASQLiteTableResultEntry.h"
 
 #import <TypeExtensions/TypeExtensions.h>
+#import <ORDA/ORDA.h>
 
-#import "ORDAGovernor.h"
-#import "ORDAStatement.h"
-#import "ORDAStatementResult.h"
-#import "ORDATable.h"
-#import "ORDATableResult.h"
 #import "ORDASQLiteTable.h"
 #import "ORDASQLiteErrorResult.h"
 

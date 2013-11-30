@@ -10,13 +10,14 @@
 
 #import <TypeExtensions/TypeExtensions.h>
 #import <TypeExtensions/String.h>
+#import <ORDA/ORDA.h>
 
-#import "ORDAStatement.h"
-#import "ORDAStatementResult.h"
+#import "ORDATableResultImpl.h"
+
 #import "ORDASQLiteGovernor.h"
 #import "ORDASQLiteErrorResult.h"
-#import "ORDATableResultImpl.h"
 #import "ORDASQLiteTableResultEntry.h"
+#import "ORDASQLiteTableView.h"
 
 @implementation ORDASQLiteTable {
 	id<ORDAStatement> tableInfoStatement, foreignKeyListStatement;
@@ -73,8 +74,9 @@
 
 - (id)selectWhereRowidEquals:(NSNumber *)rowid
 {
-	if (self.rows[rowid])
-		return self.rows[rowid];
+	id entry = self.rows[rowid];
+	if (entry)
+		return entry;
 	
 	id<ORDAStatement> stmt = [self.governor createStatement:@"SELECT * FROM [%@] WHERE rowid = '%@'", self.name, rowid];
 	if (stmt.isError)
@@ -86,7 +88,10 @@
 	if (result.rows < 1)
 		return nil;
 	
-	return self.rows[rowid] = [ORDASQLiteTableResultEntry tableResultEntryWithRowID:rowid andData:result[0] forTable:self];
+	entry = [ORDASQLiteTableResultEntry tableResultEntryWithRowID:rowid andData:result[0] forTable:self];
+	if (entry)
+		self.rows[rowid] = entry;
+	return entry;
 }
 
 - (id<ORDATableResult>)selectWhere:(NSString *)format, ...;
@@ -212,6 +217,28 @@
 		return (id<ORDAStatementResult>)stmt;
 	
 	return stmt.result;
+}
+
+- (id<ORDATableView>)viewWhere:(NSString *)format, ...
+{
+	NSString * clause = nil;
+	if (!format)
+		clause = @"1";
+	else {
+		va_list args;
+		va_start(args, format);
+		clause = [[[NSString alloc] initWithFormat:format arguments:args] autorelease];
+		va_end(args);
+	}
+	
+	id<ORDATableView> view = self.views[clause];
+	if (view)
+		return view;
+	
+	view = [ORDASQLiteTableView viewWithTable:self andClause:clause];
+	if (!view.isError)
+		return self.views[clause] = view;
+	return view;
 }
 
 - (id)keyForTableUpdate:(ORDATableUpdateType)type toRowWithKey:(id)key

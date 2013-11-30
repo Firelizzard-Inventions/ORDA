@@ -21,7 +21,7 @@
  * as `MyPrimaryKeyRow = SomeKeyValue`, that can be used to retreive the correct
  * ROWID.
  */
-@interface ORDASQLite : NSObject
+@interface CocoaSQLite : NSObject
 
 /**
  * Registers the ORDA SQLite driver

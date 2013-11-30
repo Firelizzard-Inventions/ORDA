@@ -21,12 +21,14 @@
 
 @property (readonly) NSString * name;
 @property (readonly) id<ORDAGovernor> governor;
-@property (readonly) NSMutableDictionary * rows;
+@property (readonly) NSMutableDictionary * rows, * views;
 
 + (ORDATableImpl *)tableWithGovernor:(id<ORDAGovernor>)governor withName:(NSString *)tableName;
 - (id)initWithGovernor:(id<ORDAGovernor>)governor withName:(NSString *)tableName;
 
 - (id)keyForTableUpdate:(ORDATableUpdateType)type toRowWithKey:(id)key;
+
+- (NSUInteger)nextViewID;
 
 @end
 

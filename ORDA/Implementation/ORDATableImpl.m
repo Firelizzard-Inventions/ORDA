@@ -8,12 +8,13 @@
 
 #import "ORDATableImpl.h"
 
-//#import <TypeExtensions/NSObject+abstractProtocolConformer.h>
+#import <TypeExtensions/TypeExtensions.h>
+
 #import "ORDAGovernor.h"
 #import "ORDAErrorResult.h"
-#import <TypeExtensions/NSMutableDictionary_NonRetaining_Zeroing.h>
+#import "ORDATableViewImpl.h"
 
-#pragma clang diagnostic ignored "-Wprotocol"
+SUPPRESS(-Wprotocol)
 @implementation ORDATableImpl
 
 + (ORDATableImpl *)tableWithGovernor:(id<ORDAGovernor>)governor withName:(NSString *)tableName
@@ -34,7 +35,8 @@
 	
 	_governor = governor.retain;
 	_name = tableName.retain;
-	_rows = [[NSMutableDictionary_NonRetaining_Zeroing dictionary] retain];
+	_rows = [NSMutableDictionary_NonRetaining_Zeroing dictionary].retain;
+	_views = [NSMutableDictionary_NonRetaining_Zeroing dictionary].retain;
 	
 	return self;
 }
@@ -43,6 +45,8 @@
 {
 	[_governor release];
 	[_name release];
+	[_rows release];
+	[_views release];
 	
 	[super dealloc];
 }
@@ -52,8 +56,18 @@
 	return key;
 }
 
+- (NSUInteger)nextViewID
+{
+	static NSUInteger _next = 0;
+	
+	return _next++;
+}
+
 - (id<ORDAResult>)tableUpdateDidOccur:(ORDATableUpdateType)type toRowWithKey:(id)key
 {
+	for (ORDATableViewImpl * view in self.views)
+		[view reload];
+	
 	key = [self keyForTableUpdate:type toRowWithKey:key];
 	
 	if ([key conformsToProtocol:@protocol(ORDAResult)])

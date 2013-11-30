@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Firelizzard Inventions. Some rights reserved, see license.
 //
 
-#import "ORDAResultConsts.h"
+#import <ORDA/ORDAResultConsts.h>
 
 typedef enum {
 	kORDASQLiteResultCodeConnectionErrorSubclass = 0x0100 | kORDAResultCodeDriverClass

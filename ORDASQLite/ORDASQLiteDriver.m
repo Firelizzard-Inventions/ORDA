@@ -8,8 +8,9 @@
 
 #import "ORDASQLiteDriver.h"
 
-#import "ORDA.h"
-#import "ORDASQLite.h"
+#import <ORDA/ORDA.h>
+
+#import "CocoaSQLite.h"
 #import "ORDASQLiteGovernor.h"
 
 @implementation ORDASQLiteDriver
@@ -34,7 +35,7 @@
 
 - (NSString *)scheme
 {
-	return [ORDASQLite scheme];
+	return [CocoaSQLite scheme];
 }
 
 - (id<ORDAGovernor>)governorForURL:(NSURL *)url

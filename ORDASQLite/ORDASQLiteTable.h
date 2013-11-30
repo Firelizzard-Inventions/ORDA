@@ -13,4 +13,6 @@
  */
 @interface ORDASQLiteTable : ORDATableImpl
 
+- (id)selectWhereRowidEquals:(NSNumber *)rowid;
+
 @end

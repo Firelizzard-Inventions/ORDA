@@ -10,7 +10,7 @@
 
 #import "ORDAResult.h"
 
-@protocol ORDATableResult;
+@protocol ORDAStatementResult, ORDATableResult, ORDATableView;
 
 /**
  * The ORDATable protocol specifies methods that can be used to manage and
@@ -95,11 +95,23 @@
  * @param format the format string for the where clause
  * @param ... the format string arguments
  * @return the statement result
- * @discussion THis method runs 'DELETE FROM <tableName> WHERE <whereClause>' on
+ * @discussion This method runs 'DELETE FROM <tableName> WHERE <whereClause>' on
  * the table and returns the number of rows deleted.
  * @see +[NSString stringWithFormat:]
  */
 - (id<ORDAStatementResult>)deleteWhere:(NSString *)format, ... NS_FORMAT_FUNCTION(1,2);
+
+/**
+ * Creates a 'view' of the selected rows
+ * @param format the format string for the where clause
+ * @param ... the format string arguments
+ * @return the view
+ * @discussion This method returns an object that represents a view containing
+ * the results of 'SELECT * FROM <tableName> WHERE <whereClause>'.
+ * @see ORDATableView
+ * @see +[NSString stringWithFormat:]
+ */
+- (id<ORDATableView>)viewWhere:(NSString *)format, ... NS_FORMAT_FUNCTION(1,2);
 
 /** ----------------------------------------------------------------------------
  * @name Updating Row Entities
