@@ -46,6 +46,9 @@
 		42D1902D1849A42E002EC23A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42EC295D1840476A00AA5BDA /* XCTest.framework */; };
 		42D190331849A42E002EC23A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42D190311849A42E002EC23A /* InfoPlist.strings */; };
 		42D1903D1849A442002EC23A /* ORDATests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D1903C1849A442002EC23A /* ORDATests.m */; };
+		42D190531849B3EA002EC23A /* TypeExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D1904C1849B0AE002EC23A /* TypeExtensions.framework */; };
+		42D190541849B3EE002EC23A /* TypeExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D1904C1849B0AE002EC23A /* TypeExtensions.framework */; };
+		42D190551849B3F1002EC23A /* ORDA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42909B6417B31A4700DBD505 /* ORDA.framework */; };
 		42F06AFB17B87872004F2F06 /* ORDA.h in Headers */ = {isa = PBXBuildFile; fileRef = 42909B7417B31A4700DBD505 /* ORDA.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -133,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42909B6817B31A4700DBD505 /* Cocoa.framework in Frameworks */,
+				42D190531849B3EA002EC23A /* TypeExtensions.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +145,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				42D1902D1849A42E002EC23A /* XCTest.framework in Frameworks */,
+				42D190551849B3F1002EC23A /* ORDA.framework in Frameworks */,
+				42D190541849B3EE002EC23A /* TypeExtensions.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
