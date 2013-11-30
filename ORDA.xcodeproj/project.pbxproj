@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		426CA2FB1849EF2900212CF3 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 426CA2FA1849EF2900212CF3 /* Makefile */; };
 		428D035A18495FB500303ED4 /* ORDADriver.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D035118495FB500303ED4 /* ORDADriver.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		428D035B18495FB500303ED4 /* ORDAGovernor.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D035218495FB500303ED4 /* ORDAGovernor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		428D035C18495FB500303ED4 /* ORDAResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D035318495FB500303ED4 /* ORDAResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -466,7 +465,6 @@
 				428D037418495FC500303ED4 /* ORDADriverResult.m in Sources */,
 				428D037618495FC500303ED4 /* ORDAErrorResult.m in Sources */,
 				428D038218495FC500303ED4 /* ORDATableResultImpl.m in Sources */,
-				426CA2FB1849EF2900212CF3 /* Makefile in Sources */,
 				428D03861849606900303ED4 /* ORDATableViewImpl.m in Sources */,
 				428D038018495FC500303ED4 /* ORDATableImpl.m in Sources */,
 				428D037E18495FC500303ED4 /* ORDAStatementResultImpl.m in Sources */,
