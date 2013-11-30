@@ -35,47 +35,10 @@
 		428D03851849606900303ED4 /* ORDATableViewImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D03831849606900303ED4 /* ORDATableViewImpl.h */; };
 		428D03861849606900303ED4 /* ORDATableViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 428D03841849606900303ED4 /* ORDATableViewImpl.m */; };
 		428D038B1849860F00303ED4 /* ORDA+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 424B2E7217C71CF1000B354E /* ORDA+Private.h */; };
-		428D03B9184987CE00303ED4 /* ORDADriverResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 428D036418495FC500303ED4 /* ORDADriverResult.m */; };
-		428D03BA184987CE00303ED4 /* ORDAErrorResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 428D036618495FC500303ED4 /* ORDAErrorResult.m */; };
-		428D03BB184987CE00303ED4 /* ORDATableResultImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 428D037218495FC500303ED4 /* ORDATableResultImpl.m */; };
-		428D03BC184987CE00303ED4 /* ORDATableViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 428D03841849606900303ED4 /* ORDATableViewImpl.m */; };
-		428D03BD184987CE00303ED4 /* ORDATableImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 428D037018495FC500303ED4 /* ORDATableImpl.m */; };
-		428D03BE184987CE00303ED4 /* ORDAStatementResultImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 428D036E18495FC500303ED4 /* ORDAStatementResultImpl.m */; };
-		428D03BF184987CE00303ED4 /* ORDA.m in Sources */ = {isa = PBXBuildFile; fileRef = 42909B7517B31A4700DBD505 /* ORDA.m */; };
-		428D03C0184987CE00303ED4 /* ORDAStatementImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 428D036C18495FC500303ED4 /* ORDAStatementImpl.m */; };
-		428D03C1184987CE00303ED4 /* ORDAResultImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 428D036A18495FC500303ED4 /* ORDAResultImpl.m */; };
-		428D03C2184987CE00303ED4 /* ORDAGovernorImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 428D036818495FC500303ED4 /* ORDAGovernorImpl.m */; };
-		428D03C5184987CE00303ED4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42909B6717B31A4700DBD505 /* Cocoa.framework */; };
-		428D03C7184987CE00303ED4 /* ORDA.h in Headers */ = {isa = PBXBuildFile; fileRef = 42909B7417B31A4700DBD505 /* ORDA.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		428D03C8184987CE00303ED4 /* ORDADriver.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D035118495FB500303ED4 /* ORDADriver.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		428D03C9184987CE00303ED4 /* ORDAGovernor.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D035218495FB500303ED4 /* ORDAGovernor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		428D03CA184987CE00303ED4 /* ORDAResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D035318495FB500303ED4 /* ORDAResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		428D03CB184987CE00303ED4 /* ORDAResultConsts.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D035418495FB500303ED4 /* ORDAResultConsts.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		428D03CC184987CE00303ED4 /* ORDAStatement.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D035518495FB500303ED4 /* ORDAStatement.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		428D03CD184987CE00303ED4 /* ORDAStatementResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D035618495FB500303ED4 /* ORDAStatementResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		428D03CE184987CE00303ED4 /* ORDATable.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D035718495FB500303ED4 /* ORDATable.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		428D03CF184987CE00303ED4 /* ORDATableResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D035818495FB500303ED4 /* ORDATableResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		428D03D0184987CE00303ED4 /* ORDATableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D035918495FB500303ED4 /* ORDATableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		428D03D1184987CE00303ED4 /* ORDA+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 424B2E7217C71CF1000B354E /* ORDA+Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		428D03D2184987CE00303ED4 /* ORDAResultImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D036918495FC500303ED4 /* ORDAResultImpl.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		428D03D3184987CE00303ED4 /* ORDATableResultImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D037118495FC500303ED4 /* ORDATableResultImpl.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		428D03D4184987CE00303ED4 /* ORDAStatementImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D036B18495FC500303ED4 /* ORDAStatementImpl.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		428D03D5184987CE00303ED4 /* ORDATableViewImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D03831849606900303ED4 /* ORDATableViewImpl.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		428D03D6184987CE00303ED4 /* ORDATableImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D036F18495FC500303ED4 /* ORDATableImpl.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		428D03D7184987CE00303ED4 /* ORDAGovernorImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D036718495FC500303ED4 /* ORDAGovernorImpl.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		428D03D8184987CE00303ED4 /* ORDADriverResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D036318495FC500303ED4 /* ORDADriverResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		428D03D9184987CE00303ED4 /* ORDAStatementResultImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D036D18495FC500303ED4 /* ORDAStatementResultImpl.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		428D03DA184987CE00303ED4 /* ORDAErrorResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D036518495FC500303ED4 /* ORDAErrorResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		428D03DC184987CE00303ED4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 42B00C2D17C6C54D000B13E7 /* README.md */; };
-		428D03DD184987CE00303ED4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42909B7017B31A4700DBD505 /* InfoPlist.strings */; };
-		428D03DE184987CE00303ED4 /* Chinook_Sqlite.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 42B00AF517C3402F000B13E7 /* Chinook_Sqlite.sqlite */; };
-		428D03DF184987CE00303ED4 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 42B00C3417C6C669000B13E7 /* LICENSE */; };
 		42909B6817B31A4700DBD505 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42909B6717B31A4700DBD505 /* Cocoa.framework */; };
 		42909B7217B31A4700DBD505 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42909B7017B31A4700DBD505 /* InfoPlist.strings */; };
 		4290EF7318498C4400C67769 /* TypeExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4290EF7218498C4400C67769 /* TypeExtensions.framework */; };
-		4290EF7418498C5100C67769 /* TypeExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4290EF7218498C4400C67769 /* TypeExtensions.framework */; };
 		4290F0751849920A00C67769 /* ORDA-dev.h in Headers */ = {isa = PBXBuildFile; fileRef = 4290F0741849920A00C67769 /* ORDA-dev.h */; };
-		4290F076184992AD00C67769 /* ORDA-dev.h in Headers */ = {isa = PBXBuildFile; fileRef = 4290F0741849920A00C67769 /* ORDA-dev.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		42B00AF617C3402F000B13E7 /* Chinook_Sqlite.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 42B00AF517C3402F000B13E7 /* Chinook_Sqlite.sqlite */; };
 		42B00B2417C53A9F000B13E7 /* ORDA.m in Sources */ = {isa = PBXBuildFile; fileRef = 42909B7517B31A4700DBD505 /* ORDA.m */; };
 		42B00C3317C6C65D000B13E7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 42B00C2D17C6C54D000B13E7 /* README.md */; };
@@ -126,7 +89,6 @@
 		428D037218495FC500303ED4 /* ORDATableResultImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORDATableResultImpl.m; sourceTree = "<group>"; };
 		428D03831849606900303ED4 /* ORDATableViewImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORDATableViewImpl.h; sourceTree = "<group>"; };
 		428D03841849606900303ED4 /* ORDATableViewImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORDATableViewImpl.m; sourceTree = "<group>"; };
-		428D03E4184987CE00303ED4 /* ORDA-dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "ORDA-dev.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42909B6417B31A4700DBD505 /* ORDA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ORDA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42909B6717B31A4700DBD505 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		42909B6A17B31A4700DBD505 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -154,15 +116,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		428D03C3184987CE00303ED4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				428D03C5184987CE00303ED4 /* Cocoa.framework in Frameworks */,
-				4290EF7418498C5100C67769 /* TypeExtensions.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		42909B6017B31A4700DBD505 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -201,7 +154,6 @@
 			isa = PBXGroup;
 			children = (
 				42909B6417B31A4700DBD505 /* ORDA.framework */,
-				428D03E4184987CE00303ED4 /* ORDA-dev.framework */,
 				42D1902C1849A42E002EC23A /* ORDATests.xctest */,
 			);
 			name = Products;
@@ -325,34 +277,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		428D03C6184987CE00303ED4 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4290F076184992AD00C67769 /* ORDA-dev.h in Headers */,
-				428D03C7184987CE00303ED4 /* ORDA.h in Headers */,
-				428D03D1184987CE00303ED4 /* ORDA+Private.h in Headers */,
-				428D03C8184987CE00303ED4 /* ORDADriver.h in Headers */,
-				428D03C9184987CE00303ED4 /* ORDAGovernor.h in Headers */,
-				428D03CA184987CE00303ED4 /* ORDAResult.h in Headers */,
-				428D03CB184987CE00303ED4 /* ORDAResultConsts.h in Headers */,
-				428D03CC184987CE00303ED4 /* ORDAStatement.h in Headers */,
-				428D03CD184987CE00303ED4 /* ORDAStatementResult.h in Headers */,
-				428D03CE184987CE00303ED4 /* ORDATable.h in Headers */,
-				428D03CF184987CE00303ED4 /* ORDATableResult.h in Headers */,
-				428D03D0184987CE00303ED4 /* ORDATableView.h in Headers */,
-				428D03D2184987CE00303ED4 /* ORDAResultImpl.h in Headers */,
-				428D03D3184987CE00303ED4 /* ORDATableResultImpl.h in Headers */,
-				428D03D4184987CE00303ED4 /* ORDAStatementImpl.h in Headers */,
-				428D03D5184987CE00303ED4 /* ORDATableViewImpl.h in Headers */,
-				428D03D6184987CE00303ED4 /* ORDATableImpl.h in Headers */,
-				428D03D7184987CE00303ED4 /* ORDAGovernorImpl.h in Headers */,
-				428D03D8184987CE00303ED4 /* ORDADriverResult.h in Headers */,
-				428D03D9184987CE00303ED4 /* ORDAStatementResultImpl.h in Headers */,
-				428D03DA184987CE00303ED4 /* ORDAErrorResult.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		42909B6117B31A4700DBD505 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -384,24 +308,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		428D03B7184987CE00303ED4 /* ORDA-dev */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 428D03E1184987CE00303ED4 /* Build configuration list for PBXNativeTarget "ORDA-dev" */;
-			buildPhases = (
-				428D03B8184987CE00303ED4 /* Sources */,
-				428D03C3184987CE00303ED4 /* Frameworks */,
-				428D03C6184987CE00303ED4 /* Headers */,
-				428D03DB184987CE00303ED4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "ORDA-dev";
-			productName = ORDA;
-			productReference = 428D03E4184987CE00303ED4 /* ORDA-dev.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		42909B6317B31A4700DBD505 /* ORDA */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42909B8E17B31A4700DBD505 /* Build configuration list for PBXNativeTarget "ORDA" */;
@@ -465,24 +371,12 @@
 			projectRoot = "";
 			targets = (
 				42909B6317B31A4700DBD505 /* ORDA */,
-				428D03B7184987CE00303ED4 /* ORDA-dev */,
 				42D1902B1849A42E002EC23A /* ORDATests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		428D03DB184987CE00303ED4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				428D03DC184987CE00303ED4 /* README.md in Resources */,
-				428D03DD184987CE00303ED4 /* InfoPlist.strings in Resources */,
-				428D03DE184987CE00303ED4 /* Chinook_Sqlite.sqlite in Resources */,
-				428D03DF184987CE00303ED4 /* LICENSE in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		42909B6217B31A4700DBD505 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -506,23 +400,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		428D03B8184987CE00303ED4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				428D03B9184987CE00303ED4 /* ORDADriverResult.m in Sources */,
-				428D03BA184987CE00303ED4 /* ORDAErrorResult.m in Sources */,
-				428D03BB184987CE00303ED4 /* ORDATableResultImpl.m in Sources */,
-				428D03BC184987CE00303ED4 /* ORDATableViewImpl.m in Sources */,
-				428D03BD184987CE00303ED4 /* ORDATableImpl.m in Sources */,
-				428D03BE184987CE00303ED4 /* ORDAStatementResultImpl.m in Sources */,
-				428D03BF184987CE00303ED4 /* ORDA.m in Sources */,
-				428D03C0184987CE00303ED4 /* ORDAStatementImpl.m in Sources */,
-				428D03C1184987CE00303ED4 /* ORDAResultImpl.m in Sources */,
-				428D03C2184987CE00303ED4 /* ORDAGovernorImpl.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		42909B5F17B31A4700DBD505 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -578,44 +455,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		428D03E2184987CE00303ED4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/firelizzard/Documents/Programming/~/DerivedData/Build/Products/Debug",
-				);
-				FRAMEWORK_VERSION = A;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ORDA/ORDA-Prefix.pch";
-				INFOPLIST_FILE = "/Users/firelizzard/Documents/Programming/ORDA/ORDA/ORDA-Info.plist";
-				PRODUCT_NAME = "ORDA-dev";
-				WRAPPER_EXTENSION = framework;
-			};
-			name = Debug;
-		};
-		428D03E3184987CE00303ED4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/firelizzard/Documents/Programming/~/DerivedData/Build/Products/Debug",
-				);
-				FRAMEWORK_VERSION = A;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ORDA/ORDA-Prefix.pch";
-				INFOPLIST_FILE = "/Users/firelizzard/Documents/Programming/ORDA/ORDA/ORDA-Info.plist";
-				PRODUCT_NAME = "ORDA-dev";
-				WRAPPER_EXTENSION = framework;
-			};
-			name = Release;
-		};
 		42909B8C17B31A4700DBD505 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -769,15 +608,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		428D03E1184987CE00303ED4 /* Build configuration list for PBXNativeTarget "ORDA-dev" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				428D03E2184987CE00303ED4 /* Debug */,
-				428D03E3184987CE00303ED4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		42909B5E17B31A4700DBD505 /* Build configuration list for PBXProject "ORDA" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -803,6 +633,7 @@
 				42D1903B1849A42E002EC23A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
