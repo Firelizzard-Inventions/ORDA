@@ -21,7 +21,7 @@
 
 @property (readonly) NSString * name;
 @property (readonly) id<ORDAGovernor> governor;
-@property (readonly) NSMutableDictionary * rows, * views;
+@property (readonly) NSMapTable * rows, * views;
 
 + (ORDATableImpl *)tableWithGovernor:(id<ORDAGovernor>)governor withName:(NSString *)tableName;
 - (id)initWithGovernor:(id<ORDAGovernor>)governor withName:(NSString *)tableName;

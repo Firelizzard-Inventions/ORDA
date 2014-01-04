@@ -35,8 +35,8 @@ SUPPRESS(-Wprotocol)
 	
 	_governor = governor.retain;
 	_name = tableName.retain;
-	_rows = [NSMutableDictionary_NonRetaining_Zeroing dictionary].retain;
-	_views = [NSMutableDictionary_NonRetaining_Zeroing dictionary].retain;
+	_rows = [[NSMapTable strongToWeakObjectsMapTable] retain];
+	_views = [[NSMapTable strongToWeakObjectsMapTable] retain];
 	
 	return self;
 }
