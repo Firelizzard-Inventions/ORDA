@@ -99,13 +99,6 @@
 	return _shared;
 }
 
-- (void)dealloc
-{
-	[_registeredDrivers dealloc];
-	
-	[super dealloc];
-}
-
 - (NSArray *)registeredDrivers
 {
 	return [_registeredDrivers allValues];

@@ -16,7 +16,7 @@
 
 + (ORDADriverResult *)driverWithCode:(ORDADriverCode)code forDriver:(id<ORDADriver>)driver andProtocol:(Protocol *)protocol
 {
-	return [[[self alloc] initWithCode:code forDriver:driver andProtocol:protocol] autorelease];
+	return [[self alloc] initWithCode:code forDriver:driver andProtocol:protocol];
 }
 
 - (id)initWithCode:(ORDADriverCode)code forDriver:(id<ORDADriver>)driver andProtocol:(Protocol *)protocol
@@ -27,18 +27,12 @@
 	
 	// driver shouldn't be nil
 	if (driver == nil)
-		return (ORDADriverResult *)[ORDAErrorResult errorWithCode:kORDANilDriverErrorResultCode andProtocol:nil].retain;
+		return (ORDADriverResult *)[ORDAErrorResult errorWithCode:kORDANilDriverErrorResultCode andProtocol:nil];
 	
-	_driver = [driver retain];
+	_driver = driver;
 	
 	return self;
 }
 
-- (void)dealloc
-{
-	[_driver release];
-	
-	[super dealloc];
-}
 
 @end

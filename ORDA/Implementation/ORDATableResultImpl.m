@@ -14,7 +14,7 @@
 
 + (ORDATableResultImpl *)tableResultWithArray:(NSArray *)array
 {
-	return [[[self alloc] initWithArray:array] autorelease];
+	return [[self alloc] initWithArray:array];
 }
 
 + (ORDATableResultImpl *)tableResultWithObject:(id)obj
@@ -32,12 +32,6 @@
 	return self;
 }
 
-- (void)dealloc
-{
-	[_backing release];
-	
-	[super dealloc];
-}
 
 - (NSUInteger)count
 {
@@ -49,7 +43,7 @@
 	return _backing[idx];
 }
 
-- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(id [])buffer count:(NSUInteger)len
+- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(id __unsafe_unretained [])buffer count:(NSUInteger)len
 {
 	return [_backing countByEnumeratingWithState:state objects:buffer count:len];
 }
