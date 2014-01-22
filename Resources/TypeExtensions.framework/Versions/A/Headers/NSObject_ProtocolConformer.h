@@ -10,7 +10,7 @@
 
 @interface NSObject_ProtocolConformer : NSObject
 
-@property (readonly) Protocol * protocol;
+@property (unsafe_unretained, readonly) Protocol * protocol;
 
 - (id)initWithProtocol:(Protocol *)protocol;
 
