@@ -15,7 +15,7 @@
 
 + (ORDAResultImpl *)resultWithCode:(ORDAResultCode)code
 {
-	return [[[self alloc] initWithCode:code] autorelease];
+	return [[self alloc] initWithCode:code];
 }
 
 - (id)init

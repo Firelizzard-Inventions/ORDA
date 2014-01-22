@@ -14,7 +14,7 @@
 
 + (ORDAErrorResult *)errorWithCode:(ORDAResultCode)code andProtocol:(Protocol *)protocol
 {
-	return [[[self alloc] initWithCode:code andProtocol:protocol] autorelease];
+	return [[self alloc] initWithCode:code andProtocol:protocol];
 }
 
 - (id)initWithCode:(ORDAResultCode)code andProtocol:(Protocol *)protocol

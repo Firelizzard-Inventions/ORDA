@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		42352D4A1877CBFF0011CA48 /* TypeExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42352D491877CBFF0011CA48 /* TypeExtensions.framework */; };
 		428D035A18495FB500303ED4 /* ORDADriver.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D035118495FB500303ED4 /* ORDADriver.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		428D035B18495FB500303ED4 /* ORDAGovernor.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D035218495FB500303ED4 /* ORDAGovernor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		428D035C18495FB500303ED4 /* ORDAResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 428D035318495FB500303ED4 /* ORDAResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -39,6 +38,7 @@
 		42909B6817B31A4700DBD505 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42909B6717B31A4700DBD505 /* Cocoa.framework */; };
 		42909B7217B31A4700DBD505 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42909B7017B31A4700DBD505 /* InfoPlist.strings */; };
 		4290F0751849920A00C67769 /* ORDA-dev.h in Headers */ = {isa = PBXBuildFile; fileRef = 4290F0741849920A00C67769 /* ORDA-dev.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		429CE06E188F6E6E00FF0113 /* TypeExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 429CE06D188F6E6E00FF0113 /* TypeExtensions.framework */; };
 		42B00AF617C3402F000B13E7 /* Chinook_Sqlite.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 42B00AF517C3402F000B13E7 /* Chinook_Sqlite.sqlite */; };
 		42B00B2417C53A9F000B13E7 /* ORDA.m in Sources */ = {isa = PBXBuildFile; fileRef = 42909B7517B31A4700DBD505 /* ORDA.m */; };
 		42B00C3317C6C65D000B13E7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 42B00C2D17C6C54D000B13E7 /* README.md */; };
@@ -62,7 +62,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		42352D491877CBFF0011CA48 /* TypeExtensions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TypeExtensions.framework; path = Resources/TypeExtensions.framework; sourceTree = "<group>"; };
 		424B2E7217C71CF1000B354E /* ORDA+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ORDA+Private.h"; sourceTree = "<group>"; };
 		428D035118495FB500303ED4 /* ORDADriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORDADriver.h; sourceTree = "<group>"; };
 		428D035218495FB500303ED4 /* ORDAGovernor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORDAGovernor.h; sourceTree = "<group>"; };
@@ -102,6 +101,7 @@
 		42909B7417B31A4700DBD505 /* ORDA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORDA.h; sourceTree = "<group>"; };
 		42909B7517B31A4700DBD505 /* ORDA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORDA.m; sourceTree = "<group>"; };
 		4290F0741849920A00C67769 /* ORDA-dev.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ORDA-dev.h"; sourceTree = "<group>"; };
+		429CE06D188F6E6E00FF0113 /* TypeExtensions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TypeExtensions.framework; sourceTree = "<group>"; };
 		42B00AF517C3402F000B13E7 /* Chinook_Sqlite.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinook_Sqlite.sqlite; sourceTree = "<group>"; };
 		42B00BFC17C66D38000B13E7 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		42B00C2D17C6C54D000B13E7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42352D4A1877CBFF0011CA48 /* TypeExtensions.framework in Frameworks */,
+				429CE06E188F6E6E00FF0113 /* TypeExtensions.framework in Frameworks */,
 				42909B6817B31A4700DBD505 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,12 +161,13 @@
 		42909B6617B31A4700DBD505 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				42352D491877CBFF0011CA48 /* TypeExtensions.framework */,
+				429CE06D188F6E6E00FF0113 /* TypeExtensions.framework */,
 				42EC295D1840476A00AA5BDA /* XCTest.framework */,
 				42909B6717B31A4700DBD505 /* Cocoa.framework */,
 				42909B6917B31A4700DBD505 /* Other Frameworks */,
 			);
 			name = Frameworks;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		42909B6917B31A4700DBD505 /* Other Frameworks */ = {
@@ -544,13 +545,10 @@
 		42909B8F17B31A4700DBD505 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/firelizzard/Documents/Programming/CORM/Include/CocoaSQLite/Include/ORDA/Resources,
-				);
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ORDA/ORDA-Prefix.pch";
@@ -563,13 +561,10 @@
 		42909B9017B31A4700DBD505 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/firelizzard/Documents/Programming/CORM/Include/CocoaSQLite/Include/ORDA/Resources,
-				);
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ORDA/ORDA-Prefix.pch";

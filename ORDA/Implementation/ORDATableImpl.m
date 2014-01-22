@@ -19,7 +19,7 @@ SUPPRESS(-Wprotocol)
 
 + (ORDATableImpl *)tableWithGovernor:(id<ORDAGovernor>)governor withName:(NSString *)tableName
 {
-	return [[[self alloc] initWithGovernor:governor withName:tableName] autorelease];
+	return [[self alloc] initWithGovernor:governor withName:tableName];
 }
 
 - (id)initWithGovernor:(id<ORDAGovernor>)governor withName:(NSString *)tableName
@@ -28,28 +28,19 @@ SUPPRESS(-Wprotocol)
 		return nil;
 	
 	if (!governor)
-		return (ORDATableImpl *)[ORDAErrorResult errorWithCode:kORDANilGovernorErrorResultCode andProtocol:@protocol(ORDATable)].retain;
+		return (ORDATableImpl *)[ORDAErrorResult errorWithCode:kORDANilGovernorErrorResultCode andProtocol:@protocol(ORDATable)];
 	
 	if (!tableName)
-		return (ORDATableImpl *)[ORDAErrorResult errorWithCode:kORDANilTableNameErrorResultCode andProtocol:@protocol(ORDATable)].retain;
+		return (ORDATableImpl *)[ORDAErrorResult errorWithCode:kORDANilTableNameErrorResultCode andProtocol:@protocol(ORDATable)];
 	
-	_governor = governor.retain;
-	_name = tableName.retain;
-	_rows = [[NSMapTable strongToWeakObjectsMapTable] retain];
-	_views = [[NSMapTable strongToWeakObjectsMapTable] retain];
+	_governor = governor;
+	_name = tableName;
+	_rows = [NSMapTable strongToWeakObjectsMapTable];
+	_views = [NSMapTable strongToWeakObjectsMapTable];
 	
 	return self;
 }
 
-- (void)dealloc
-{
-	[_governor release];
-	[_name release];
-	[_rows release];
-	[_views release];
-	
-	[super dealloc];
-}
 
 - (id)keyForTableUpdate:(ORDATableUpdateType)type toRowWithKey:(id)key
 {

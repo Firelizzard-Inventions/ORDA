@@ -15,7 +15,7 @@
 
 + (ORDAStatementResultImpl *)statementResultWithChanged:(long long)changed andLastID:(long long)lastID andRows:(long)rows andColumns:(NSArray *)columns andDictionaryOfArrays:(NSDictionary *)dict andArrayOfDictionaries:(NSArray *)array
 {
-	return [[[ORDAStatementResultImpl alloc] initWithChanged:changed andLastID:lastID andRows:rows andColumns:columns andDictionaryOfArrays:dict andArrayOfDictionaries:array] autorelease];
+	return [[ORDAStatementResultImpl alloc] initWithChanged:changed andLastID:lastID andRows:rows andColumns:columns andDictionaryOfArrays:dict andArrayOfDictionaries:array];
 }
 
 - (id)initWithChanged:(long long)changed andLastID:(long long)lastID andRows:(long)rows andColumns:(NSArray *)columns andDictionaryOfArrays:(NSDictionary *)dict andArrayOfDictionaries:(NSArray *)array
@@ -29,14 +29,6 @@
 	_array = array.copy;
 	
 	return self;
-}
-
-- (void)dealloc
-{
-	[_array release];
-	[_dict release];
-	
-	[super dealloc];
 }
 
 - (long)rows

@@ -16,7 +16,7 @@ SUPPRESS(-Wprotocol)
 
 + (ORDAStatementImpl *)statementWithGovernor:(id<ORDAGovernor>)governor withSQL:(NSString *)SQL
 {
-	return [[[self alloc] initWithGovernor:governor withSQL:SQL] autorelease];
+	return [[self alloc] initWithGovernor:governor withSQL:SQL];
 }
 
 - (id)initWithGovernor:(id<ORDAGovernor>)governor withSQL:(NSString *)SQL
@@ -25,23 +25,15 @@ SUPPRESS(-Wprotocol)
 		return nil;
 	
 	if (!governor)
-		return (ORDAStatementImpl *)[ORDAErrorResult errorWithCode:kORDANilGovernorErrorResultCode andProtocol:@protocol(ORDAStatement)].retain;
+		return (ORDAStatementImpl *)[ORDAErrorResult errorWithCode:kORDANilGovernorErrorResultCode andProtocol:@protocol(ORDAStatement)];
 	
 	if (!SQL)
-		return (ORDAStatementImpl *)[ORDAErrorResult errorWithCode:kORDANilStatementSQLErrorResultCode andProtocol:@protocol(ORDAStatement)].retain;
+		return (ORDAStatementImpl *)[ORDAErrorResult errorWithCode:kORDANilStatementSQLErrorResultCode andProtocol:@protocol(ORDAStatement)];
 	
-	_governor = governor.retain;
+	_governor = governor;
 	_statementSQL = SQL.copy;
 	
 	return self;
-}
-
-- (void)dealloc
-{
-	[_governor release];
-	[_statementSQL release];
-	
-	[super dealloc];
 }
 
 - (id<NSFastEnumeration>)fastEnumerate
@@ -49,10 +41,10 @@ SUPPRESS(-Wprotocol)
 	return self;
 }
 
-- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(id [])buffer count:(NSUInteger)len
+- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(id __unsafe_unretained [])buffer count:(NSUInteger)len
 {
 	if (!state->state) {
-		state->mutationsPtr = (unsigned long *)self;
+		state->mutationsPtr = (unsigned long *)(__bridge void *)self;
 		state->extra[0] = (long)self;
 		state->state++;
 	}

@@ -20,7 +20,7 @@ SUPPRESS(-Wprotocol)
 	_mutationsCount++;
 }
 
-- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(id [])buffer count:(NSUInteger)len
+- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(id __unsafe_unretained [])buffer count:(NSUInteger)len
 {
 	NSUInteger count = self.count,
 			   selfIndex = state->state,
